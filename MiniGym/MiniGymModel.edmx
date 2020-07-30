@@ -157,7 +157,7 @@
             <End Role="Persona" EntitySet="Personas" />
           </AssociationSet>
           <EntitySet Name="Prestamos" EntityType="MiniGymModel.PrestamoSet" />
-          <EntitySet Name="Cuotas" EntityType="MiniGymModel.Cuota" />
+          <EntitySet Name="Cuotas" EntityType="MiniGymModel.CuotaSet" />
           <AssociationSet Name="PrestamoCuota" Association="MiniGymModel.PrestamoCuota">
             <End Role="Prestamo" EntitySet="Prestamos" />
             <End Role="Cuota" EntitySet="Cuotas" />
@@ -248,7 +248,7 @@
           <Property Name="PersonaId" Type="Int64" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
         </EntityType>
-        <EntityType Name="Cuota">
+        <EntityType Name="CuotaSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -265,7 +265,7 @@
         </EntityType>
         <Association Name="PrestamoCuota">
           <End Type="MiniGymModel.PrestamoSet" Role="Prestamo" Multiplicity="1" />
-          <End Type="MiniGymModel.Cuota" Role="Cuota" Multiplicity="*" />
+          <End Type="MiniGymModel.CuotaSet" Role="Cuota" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Prestamo">
               <PropertyRef Name="Id" />
@@ -359,7 +359,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cuotas">
-      <EntityTypeMapping TypeName="IsTypeOf(MiniGymModel.Cuota)">
+      <EntityTypeMapping TypeName="IsTypeOf(MiniGymModel.CuotaSet)">
         <MappingFragment StoreEntitySet="Cuotas">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="NumeroCuota" ColumnName="NumeroCuota" />

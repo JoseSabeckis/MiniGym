@@ -12,7 +12,7 @@ namespace MiniGym
     using System;
     using System.Collections.Generic;
     
-    public partial class Cuota
+    public partial class CuotaSet
     {
         public long Id { get; set; }
         public string NumeroCuota { get; set; }

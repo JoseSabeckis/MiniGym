@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="MiniGymModel.Persona" Width="1.5" PointX="5.125" PointY="0.5" FillColor="Blue" />
         <AssociationConnector Association="MiniGymModel.LocalidadPersona" />
         <EntityTypeShape EntityType="MiniGymModel.PrestamoSet" Width="1.5" PointX="8.375" PointY="0.5" FillColor="Lime" />
-        <EntityTypeShape EntityType="MiniGymModel.Cuota" Width="1.5" PointX="10.625" PointY="0.75" FillColor="0, 192, 0" />
+        <EntityTypeShape EntityType="MiniGymModel.CuotaSet" Width="1.5" PointX="10.625" PointY="0.75" FillColor="0, 192, 0" />
         <AssociationConnector Association="MiniGymModel.PrestamoCuota" />
         <AssociationConnector Association="MiniGymModel.PersonaPrestamo" />
       </Diagram>

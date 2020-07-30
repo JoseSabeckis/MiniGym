@@ -37,7 +37,7 @@ namespace MiniGym.Cuota.Servicios
                     fechaVencimiento = fechaInicio.AddMonths(1);
 
 
-                    var cuotasCant = new Cuota
+                    var cuotasCant = new CuotaSet
                     {
                         EstadoCuota = EstadoCuota.Pendiente,
                         ValorCuota = Math.Round(cuota.ValorCuota, 2),
