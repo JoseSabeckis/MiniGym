@@ -77,7 +77,7 @@ namespace MiniGym
 
         private void nuevoPlanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var plan = new NuevoPlanCuota();
+            var plan = new NuevoPlanCuota(Helpers.TipoOperacion.Nuevo);
             plan.ShowDialog();
         }
     }

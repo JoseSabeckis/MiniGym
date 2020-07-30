@@ -119,7 +119,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(382, 178);
+            this.label15.Location = new System.Drawing.Point(382, 174);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 19);
             this.label15.TabIndex = 216;
@@ -205,7 +205,6 @@
             this.label11.Size = new System.Drawing.Size(39, 19);
             this.label11.TabIndex = 212;
             this.label11.Text = "CUIL";
-            this.label11.Visible = false;
             // 
             // txtCuil
             // 
@@ -216,7 +215,6 @@
             this.txtCuil.Name = "txtCuil";
             this.txtCuil.Size = new System.Drawing.Size(149, 27);
             this.txtCuil.TabIndex = 205;
-            this.txtCuil.Visible = false;
             // 
             // label1
             // 

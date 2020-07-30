@@ -1,5 +1,6 @@
 ﻿using MiniGym.Cuota.Servicios;
 using MiniGym.FormularioBase;
+using MiniGym.Helpers;
 using MiniGym.PersonaCarpeta.Servicios;
 using MiniGym.Prestamo.Servicios;
 using System;
@@ -20,13 +21,16 @@ namespace MiniGym.Prestamo
         IPersonaServicio _clienteServicio;
         MiniGym.Cuota.Servicios.ICuotaServicio _CuotaServicio;
 
-        public NuevoPlanCuota()
+        public NuevoPlanCuota(TipoOperacion tipoOperacion, long? entidadId = null)
+            : base(tipoOperacion, entidadId)
         {
             InitializeComponent();
 
             prestamoServico = new PrestamoServicio();
             _clienteServicio = new PersonaServicio();
             _CuotaServicio = new MiniGym.Cuota.Servicios.CuotaServicio();
+
+            btnLimpiar.Visible = false;
         }
 
         public void TraerCodigoCredito()
@@ -60,6 +64,72 @@ namespace MiniGym.Prestamo
                 txtDni.Text = $"{auxClienteEncontrado.Dni}";
 
             }
+        }
+
+        public override bool EjecutarComandoNuevo()
+        {
+
+            if (string.IsNullOrEmpty(txtBusquedaCliente.Text))
+            {
+                MessageBox.Show("No Hay Ningun Cliente Seleccionado Por Favor Cargue Uno", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                MessageBox.Show("Agregue una Descripcion", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (nudValorCuota.Value <= 0)
+            {
+                MessageBox.Show("No Ingreso Ningun Monto A Cobrar", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (MessageBox.Show("Esta Seguro De Realizar El Plan?...", "Stop", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                MessageBox.Show("Plan CANCELADO ...", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return false;
+            }
+
+            var idpersona = _clienteServicio.ObtenerPorDni(txtDni.Text).Id;
+
+            var nuevoPrestamo = new PrestamoDto
+            {
+                CantidadCuotas = 12,
+                CodigoCredito = txtCredito.Text,
+                EstadoPrestamo = EstadoPrestamo.EnProceso,
+                FechaInicio = DateTime.Now,
+                Notas = txtNotas.Text,
+                PersonaId = idpersona,
+                Descripcion = txtDescripcion.Text
+
+            };
+
+            decimal valorCuotas = nudValorCuota.Value;
+
+            prestamoServico.NuevoPrestamo(nuevoPrestamo);//creacion del prestamo
+
+            var idprestamo = prestamoServico.TrerIdDelPrestamoPorFechaIinicio(nuevoPrestamo.FechaInicio);
+
+            var cuota = new MiniGym.Cuota.Servicios.CuotaDto
+            {
+                ValorCuota = Math.Round(valorCuotas, 2),
+                Saldo = valorCuotas,
+                PrestamoId = idprestamo
+            };
+
+            _CuotaServicio.CargarCuotas(12, cuota, dtpFechaPrestamo.Value);//creacion de las cuotas
+
+            nudValorCuota.Value = 0;
+            txtDescripcion.Text = $"{DateTime.Now.Year}";
+            txtNotas.Text = "";
+            TraerCodigoCredito();
+
+            return true;
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

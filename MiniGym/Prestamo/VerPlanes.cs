@@ -50,7 +50,7 @@ namespace MiniGym.Prestamo
             grilla.Columns["CodigoCredito"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Descripcion"].Visible = true;
-            grilla.Columns["Descripcion"].Width = 40;
+            grilla.Columns["Descripcion"].Width = 100;
             grilla.Columns["Descripcion"].HeaderText = @"Titulo";
             grilla.Columns["Descripcion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Descripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -194,8 +194,27 @@ namespace MiniGym.Prestamo
                 return;
             }
 
+            if (_prestamoServicio.BuscarPrestamoPorId(IdComprobanteSeleccionado).EstadoPrestamo == EstadoPrestamo.EnProceso)
+            {
+
+                var cuotas = _cuotaServicio.ObtenerCuotasPorIDComprobante(IdComprobanteSeleccionado);
+
+                foreach (var item in cuotas)
+                {
+                    if (item.ValorParcial > 0)
+                    {
+                        MessageBox.Show("Este Prestamo Registra Movimientos, No Puede Cancelarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+
+            }
+
             if (MessageBox.Show("Esta Seguro De Cancelar Este Prestamo? Con Sus Respectivas Cuotas", "PELIGRO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
+
+                //cancelar prestamo
+                _prestamoServicio.EliminarPrestamoCuotasComprobante(IdComprobanteSeleccionado);
 
                 MessageBox.Show("---- Prestamo Cancelado Exitosamente! ----", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

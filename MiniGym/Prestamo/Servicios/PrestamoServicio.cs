@@ -8,7 +8,28 @@ namespace MiniGym.Prestamo.Servicios
 {
     public class PrestamoServicio : IPrestamoServicio
     {
+        public void EliminarPrestamoCuotasComprobante(long prestamoId)
+        {
+            using (var contex = new MiniGymModelContainer())
+            {
 
+                var cuotas = contex.Cuotas.Where(x => x.PrestamoId == prestamoId);
+
+                foreach (var item in cuotas)
+                {
+
+                    contex.Cuotas.Remove(item);
+
+                }
+
+                var prestamo = contex.Prestamos.FirstOrDefault(x => x.Id == prestamoId);
+                prestamo.EstadoPrestamo = EstadoPrestamo.Cancelado;
+
+                contex.SaveChanges();
+
+            }
+
+        }
         public void NuevoPrestamo(PrestamoDto prestamo)
         {
 

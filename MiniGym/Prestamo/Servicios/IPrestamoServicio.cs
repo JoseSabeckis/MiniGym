@@ -13,6 +13,8 @@ namespace MiniGym.Prestamo.Servicios
 
         long TrerIdDelPrestamoPorFechaIinicio(DateTime inicio);
 
+        void EliminarPrestamoCuotasComprobante(long prestamoId);
+
         void ModificarFechaFinDePrestamo(long id);
 
         PrestamoDto BuscarPrestamoPorId(long id);
