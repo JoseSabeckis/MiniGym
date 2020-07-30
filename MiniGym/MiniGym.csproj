@@ -59,6 +59,9 @@
     <Compile Include="Cuota.cs">
       <DependentUpon>MiniGymModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Cuota\Servicios\CuotaDto.cs" />
+    <Compile Include="Cuota\Servicios\CuotaServicio.cs" />
+    <Compile Include="Cuota\Servicios\ICuotaServicio.cs" />
     <Compile Include="EstadoCuota.cs">
       <DependentUpon>MiniGymModel.tt</DependentUpon>
     </Compile>
@@ -145,9 +148,12 @@
     <Compile Include="PersonaCarpeta\Servicios\IPersonaServicio.cs" />
     <Compile Include="PersonaCarpeta\Servicios\PersonaDto.cs" />
     <Compile Include="PersonaCarpeta\Servicios\PersonaServicio.cs" />
-    <Compile Include="Prestamo.cs">
+    <Compile Include="PrestamoSet.cs">
       <DependentUpon>MiniGymModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Prestamo\Servicios\IPrestamoServicio.cs" />
+    <Compile Include="Prestamo\Servicios\PrestamoDto.cs" />
+    <Compile Include="Prestamo\Servicios\PrestamoServicio.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>

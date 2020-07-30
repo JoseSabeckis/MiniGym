@@ -19,12 +19,11 @@ namespace MiniGym
         public decimal ValorCuota { get; set; }
         public decimal ValorParcial { get; set; }
         public EstadoCuota EstadoCuota { get; set; }
-        public decimal Interes { get; set; }
         public System.DateTime FechaInicio { get; set; }
         public System.DateTime FechaVencimiento { get; set; }
         public decimal Saldo { get; set; }
         public long PrestamoId { get; set; }
     
-        public virtual Prestamo Prestamo { get; set; }
+        public virtual PrestamoSet Prestamo { get; set; }
     }
 }

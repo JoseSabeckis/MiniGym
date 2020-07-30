@@ -12,10 +12,10 @@ namespace MiniGym
     using System;
     using System.Collections.Generic;
     
-    public partial class Prestamo
+    public partial class PrestamoSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Prestamo()
+        public PrestamoSet()
         {
             this.Cuota = new HashSet<Cuota>();
         }
@@ -24,9 +24,7 @@ namespace MiniGym
         public string CodigoCredito { get; set; }
         public System.DateTime FechaInicio { get; set; }
         public Nullable<System.DateTime> FechaFin { get; set; }
-        public decimal DineroPrestado { get; set; }
         public int CantidadCuotas { get; set; }
-        public decimal TotalFinal { get; set; }
         public string Notas { get; set; }
         public EstadoPrestamo EstadoPrestamo { get; set; }
         public long PersonaId { get; set; }

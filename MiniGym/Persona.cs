@@ -17,7 +17,7 @@ namespace MiniGym
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Persona()
         {
-            this.Prestamo = new HashSet<Prestamo>();
+            this.Prestamo = new HashSet<PrestamoSet>();
         }
     
         public long Id { get; set; }
@@ -36,6 +36,6 @@ namespace MiniGym
     
         public virtual LocalidadSet Localidad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Prestamo> Prestamo { get; set; }
+        public virtual ICollection<PrestamoSet> Prestamo { get; set; }
     }
 }

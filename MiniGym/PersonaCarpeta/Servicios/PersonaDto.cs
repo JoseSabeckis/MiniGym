@@ -33,5 +33,11 @@ namespace MiniGym.PersonaCarpeta.Servicios
         public string Calle { get; set; }
 
         public string Domicilio => Calle + " " + Numero;
+
+        //deuda
+
+        public decimal TotalAdeudado { get; set; }
+
+        public long PrestamoId { get; set; }
     }
 }
