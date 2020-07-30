@@ -9,6 +9,8 @@
     <EntitySet Name="Localidades" EntityType="MiniGymModel.Store.Localidades" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Provincias" EntityType="MiniGymModel.Store.Provincias" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Personas" EntityType="MiniGymModel.Store.Personas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Prestamos" EntityType="MiniGymModel.Store.Prestamos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cuotas" EntityType="MiniGymModel.Store.Cuotas" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="ProvinciaLocalidad" Association="MiniGymModel.Store.ProvinciaLocalidad">
       <End Role="Provincia" EntitySet="Provincias" />
       <End Role="Localidad" EntitySet="Localidades" />
@@ -16,6 +18,14 @@
     <AssociationSet Name="LocalidadPersona" Association="MiniGymModel.Store.LocalidadPersona">
       <End Role="Localidad" EntitySet="Localidades" />
       <End Role="Persona" EntitySet="Personas" />
+    </AssociationSet>
+    <AssociationSet Name="PrestamoCuota" Association="MiniGymModel.Store.PrestamoCuota">
+      <End Role="Prestamo" EntitySet="Prestamos" />
+      <End Role="Cuota" EntitySet="Cuotas" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaPrestamo" Association="MiniGymModel.Store.PersonaPrestamo">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="Prestamo" EntitySet="Prestamos" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Localidades">
@@ -54,6 +64,37 @@
     <Property Name="Calle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="Prestamos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoCredito" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="FechaFin" Type="datetime" Nullable="true" />
+    <Property Name="DineroPrestado" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="CantidadCuotas" Type="int" Nullable="false" />
+    <Property Name="TotalFinal" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Notas" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstadoPrestamo" Type="bigint" Nullable="false" />
+    <Property Name="PersonaId" Type="bigint" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cuotas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeroCuota" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ValorCuota" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ValorParcial" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="EstadoCuota" Type="bigint" Nullable="false" />
+    <Property Name="Interes" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
+    <Property Name="Saldo" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="PrestamoId" Type="bigint" Nullable="false" />
+  </EntityType>
   <Association Name="ProvinciaLocalidad">
     <End Role="Provincia" Type="MiniGymModel.Store.Provincias" Multiplicity="1" />
     <End Role="Localidad" Type="MiniGymModel.Store.Localidades" Multiplicity="*" />
@@ -78,6 +119,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="PrestamoCuota">
+    <End Role="Prestamo" Type="MiniGymModel.Store.Prestamos" Multiplicity="1" />
+    <End Role="Cuota" Type="MiniGymModel.Store.Cuotas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prestamo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cuota">
+        <PropertyRef Name="PrestamoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaPrestamo">
+    <End Role="Persona" Type="MiniGymModel.Store.Personas" Multiplicity="1" />
+    <End Role="Prestamo" Type="MiniGymModel.Store.Prestamos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prestamo">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -93,6 +158,16 @@
           <AssociationSet Name="LocalidadPersona" Association="MiniGymModel.LocalidadPersona">
             <End Role="Localidad" EntitySet="Localidades" />
             <End Role="Persona" EntitySet="Personas" />
+          </AssociationSet>
+          <EntitySet Name="Prestamos" EntityType="MiniGymModel.Prestamo" />
+          <EntitySet Name="Cuotas" EntityType="MiniGymModel.Cuota" />
+          <AssociationSet Name="PrestamoCuota" Association="MiniGymModel.PrestamoCuota">
+            <End Role="Prestamo" EntitySet="Prestamos" />
+            <End Role="Cuota" EntitySet="Cuotas" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaPrestamo" Association="MiniGymModel.PersonaPrestamo">
+            <End Role="Persona" EntitySet="Personas" />
+            <End Role="Prestamo" EntitySet="Prestamos" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="LocalidadSet">
@@ -146,6 +221,7 @@
           <Property Name="LocalidadId" Type="Int64" Nullable="false" />
           <Property Name="Calle" Type="String" Nullable="false" />
           <Property Name="Numero" Type="String" Nullable="false" />
+          <NavigationProperty Name="Prestamo" Relationship="MiniGymModel.PersonaPrestamo" FromRole="Persona" ToRole="Prestamo" />
         </EntityType>
         <Association Name="LocalidadPersona">
           <End Type="MiniGymModel.LocalidadSet" Role="Localidad" Multiplicity="1" />
@@ -156,6 +232,75 @@
             </Principal>
             <Dependent Role="Persona">
               <PropertyRef Name="LocalidadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Prestamo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoCredito" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="DineroPrestado" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CantidadCuotas" Type="Int32" Nullable="false" />
+          <Property Name="TotalFinal" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Notas" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoPrestamo" Type="MiniGymModel.EstadoPrestamo" Nullable="false" />
+          <NavigationProperty Name="Cuota" Relationship="MiniGymModel.PrestamoCuota" FromRole="Prestamo" ToRole="Cuota" />
+          <NavigationProperty Name="Persona" Relationship="MiniGymModel.PersonaPrestamo" FromRole="Prestamo" ToRole="Persona" />
+          <Property Name="PersonaId" Type="Int64" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cuota">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroCuota" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ValorCuota" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ValorParcial" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="EstadoCuota" Type="MiniGymModel.EstadoCuota" Nullable="false" />
+          <Property Name="Interes" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="PrestamoId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Prestamo" Relationship="MiniGymModel.PrestamoCuota" FromRole="Cuota" ToRole="Prestamo" />
+        </EntityType>
+        <Association Name="PrestamoCuota">
+          <End Type="MiniGymModel.Prestamo" Role="Prestamo" Multiplicity="1" />
+          <End Type="MiniGymModel.Cuota" Role="Cuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prestamo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cuota">
+              <PropertyRef Name="PrestamoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="EstadoPrestamo" UnderlyingType="Int64">
+          <Member Name="EnProceso" Value="0" />
+          <Member Name="Terminado" Value="1" />
+          <Member Name="Cancelado" Value="2" />
+        </EnumType>
+        <EnumType Name="EstadoCuota" UnderlyingType="Int64">
+          <Member Name="Cobrado" Value="0" />
+          <Member Name="Impaga" Value="1" />
+          <Member Name="Parcial" Value="2" />
+          <Member Name="Pendiente" Value="3" />
+        </EnumType>
+        <Association Name="PersonaPrestamo">
+          <End Type="MiniGymModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="MiniGymModel.Prestamo" Role="Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prestamo">
+              <PropertyRef Name="PersonaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -201,6 +346,39 @@
           <ScalarProperty Name="LocalidadId" ColumnName="LocalidadId" />
           <ScalarProperty Name="Calle" ColumnName="Calle" />
           <ScalarProperty Name="Numero" ColumnName="Numero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prestamos">
+      <EntityTypeMapping TypeName="IsTypeOf(MiniGymModel.Prestamo)">
+        <MappingFragment StoreEntitySet="Prestamos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoCredito" ColumnName="CodigoCredito" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="DineroPrestado" ColumnName="DineroPrestado" />
+          <ScalarProperty Name="CantidadCuotas" ColumnName="CantidadCuotas" />
+          <ScalarProperty Name="TotalFinal" ColumnName="TotalFinal" />
+          <ScalarProperty Name="Notas" ColumnName="Notas" />
+          <ScalarProperty Name="EstadoPrestamo" ColumnName="EstadoPrestamo" />
+          <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuotas">
+      <EntityTypeMapping TypeName="IsTypeOf(MiniGymModel.Cuota)">
+        <MappingFragment StoreEntitySet="Cuotas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumeroCuota" ColumnName="NumeroCuota" />
+          <ScalarProperty Name="ValorCuota" ColumnName="ValorCuota" />
+          <ScalarProperty Name="ValorParcial" ColumnName="ValorParcial" />
+          <ScalarProperty Name="EstadoCuota" ColumnName="EstadoCuota" />
+          <ScalarProperty Name="Interes" ColumnName="Interes" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="PrestamoId" ColumnName="PrestamoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

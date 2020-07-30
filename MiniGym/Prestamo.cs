@@ -12,30 +12,28 @@ namespace MiniGym
     using System;
     using System.Collections.Generic;
     
-    public partial class Persona
+    public partial class Prestamo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Persona()
+        public Prestamo()
         {
-            this.Prestamo = new HashSet<Prestamo>();
+            this.Cuota = new HashSet<Cuota>();
         }
     
         public long Id { get; set; }
-        public string Apellido { get; set; }
-        public string Nombre { get; set; }
-        public string Dni { get; set; }
-        public string Telefono { get; set; }
-        public string Celular { get; set; }
-        public string Email { get; set; }
-        public string Cuil { get; set; }
-        public System.DateTime FechaNacimiento { get; set; }
-        public bool EstaEliminado { get; set; }
-        public long LocalidadId { get; set; }
-        public string Calle { get; set; }
-        public string Numero { get; set; }
+        public string CodigoCredito { get; set; }
+        public System.DateTime FechaInicio { get; set; }
+        public Nullable<System.DateTime> FechaFin { get; set; }
+        public decimal DineroPrestado { get; set; }
+        public int CantidadCuotas { get; set; }
+        public decimal TotalFinal { get; set; }
+        public string Notas { get; set; }
+        public EstadoPrestamo EstadoPrestamo { get; set; }
+        public long PersonaId { get; set; }
+        public string Descripcion { get; set; }
     
-        public virtual LocalidadSet Localidad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Prestamo> Prestamo { get; set; }
+        public virtual ICollection<Cuota> Cuota { get; set; }
+        public virtual Persona Persona { get; set; }
     }
 }

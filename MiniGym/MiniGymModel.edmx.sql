@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/30/2020 17:34:37
+-- Date Created: 07/30/2020 18:04:26
 -- Generated from EDMX file: C:\Users\joses\source\repos\MiniGym\MiniGym\MiniGymModel.edmx
 -- --------------------------------------------------
 
@@ -78,6 +78,37 @@ CREATE TABLE [dbo].[Personas] (
 );
 GO
 
+-- Creating table 'Prestamos'
+CREATE TABLE [dbo].[Prestamos] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [CodigoCredito] nvarchar(max)  NOT NULL,
+    [FechaInicio] datetime  NOT NULL,
+    [FechaFin] datetime  NULL,
+    [DineroPrestado] decimal(18,0)  NOT NULL,
+    [CantidadCuotas] int  NOT NULL,
+    [TotalFinal] decimal(18,0)  NOT NULL,
+    [Notas] nvarchar(max)  NOT NULL,
+    [EstadoPrestamo] bigint  NOT NULL,
+    [PersonaId] bigint  NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Cuotas'
+CREATE TABLE [dbo].[Cuotas] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [NumeroCuota] nvarchar(max)  NOT NULL,
+    [ValorCuota] decimal(18,0)  NOT NULL,
+    [ValorParcial] decimal(18,0)  NOT NULL,
+    [EstadoCuota] bigint  NOT NULL,
+    [Interes] decimal(18,0)  NOT NULL,
+    [FechaInicio] datetime  NOT NULL,
+    [FechaVencimiento] datetime  NOT NULL,
+    [Saldo] decimal(18,0)  NOT NULL,
+    [PrestamoId] bigint  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -97,6 +128,18 @@ GO
 -- Creating primary key on [Id] in table 'Personas'
 ALTER TABLE [dbo].[Personas]
 ADD CONSTRAINT [PK_Personas]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Prestamos'
+ALTER TABLE [dbo].[Prestamos]
+ADD CONSTRAINT [PK_Prestamos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Cuotas'
+ALTER TABLE [dbo].[Cuotas]
+ADD CONSTRAINT [PK_Cuotas]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -132,6 +175,36 @@ GO
 CREATE INDEX [IX_FK_LocalidadPersona]
 ON [dbo].[Personas]
     ([LocalidadId]);
+GO
+
+-- Creating foreign key on [PrestamoId] in table 'Cuotas'
+ALTER TABLE [dbo].[Cuotas]
+ADD CONSTRAINT [FK_PrestamoCuota]
+    FOREIGN KEY ([PrestamoId])
+    REFERENCES [dbo].[Prestamos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PrestamoCuota'
+CREATE INDEX [IX_FK_PrestamoCuota]
+ON [dbo].[Cuotas]
+    ([PrestamoId]);
+GO
+
+-- Creating foreign key on [PersonaId] in table 'Prestamos'
+ALTER TABLE [dbo].[Prestamos]
+ADD CONSTRAINT [FK_PersonaPrestamo]
+    FOREIGN KEY ([PersonaId])
+    REFERENCES [dbo].[Personas]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonaPrestamo'
+CREATE INDEX [IX_FK_PersonaPrestamo]
+ON [dbo].[Prestamos]
+    ([PersonaId]);
 GO
 
 -- --------------------------------------------------
