@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,130 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActualizarDos_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ActualizarDos.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="actualizarMIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actualizarMIO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_shop_online_ecommerce_shopping_9_icon_icons_com_61652" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_shop_online_ecommerce_shopping_9_icon_icons_com_61652__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="analytics_78917" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\analytics_78917.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bag1_114871" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bag1_114871.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bloquearMio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bloquearMio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuscarDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BuscarDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="businessmen_78920" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\businessmen_78920.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="credit_card_back_symbol_icon_icons_com_56187" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\credit-card-back-symbol_icon-icons.com_56187.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CuentaCorrienteDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CuentaCorrienteDos.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CuentaCorrienteDos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CuentaCorrienteDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditarDos_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditarDos.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EliminarDos_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EliminarDos.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Factura_A_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Factura_A_3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guardarMio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guardarMio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagenDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenDos.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagenDos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagenDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImprimirMio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImprimirMio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InsertarDos_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InsertarDos.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="laptop_1_102326" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\laptop-1_102326.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ListaFacuturasDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ListaFacuturasDos.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ListaFacuturasDos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ListaFacuturasDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoginDos_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginDos.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuPrincipal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuPrincipal.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuPrincipal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuPrincipal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notepad_78910" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notepad_78910.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SalirDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SalirDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shoppingbasket3_114870" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shoppingbasket3_114870.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shoppingcart2_114869" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shoppingcart2_114869.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shoppingcart3_114877" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shoppingcart3_114877.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shopping_bag_check_symbol_icon_icons_com_56148" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shopping-bag-check-symbol_icon-icons.com_56148.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shopping_cart_icon_icons_com_56125" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shopping-cart_icon-icons.com_56125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shop_building_icon_icons_com_56149" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop-building_icon-icons.com_56149.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shop_store_frontal_building_icon_icons_com_56118" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop-store-frontal-building_icon-icons.com_56118.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wallet_114883" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wallet_114883.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wallet_78921" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wallet_78921.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1490129335_rounded14_82192" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1490129335-rounded14_82192.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="the_gym_948" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\the-gym-948.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

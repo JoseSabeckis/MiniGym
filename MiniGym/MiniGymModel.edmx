@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MiniGymModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MiniGymModelStoreContainer">
+    <EntitySet Name="Localidades" EntityType="MiniGymModel.Store.Localidades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Provincias" EntityType="MiniGymModel.Store.Provincias" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personas" EntityType="MiniGymModel.Store.Personas" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ProvinciaLocalidad" Association="MiniGymModel.Store.ProvinciaLocalidad">
+      <End Role="Provincia" EntitySet="Provincias" />
+      <End Role="Localidad" EntitySet="Localidades" />
+    </AssociationSet>
+    <AssociationSet Name="LocalidadPersona" Association="MiniGymModel.Store.LocalidadPersona">
+      <End Role="Localidad" EntitySet="Localidades" />
+      <End Role="Persona" EntitySet="Personas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Localidades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="ProvinciaId" Type="bigint" Nullable="false" />
+    <Property Name="PersonaId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provincias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Dni" Type="nvarchar" Nullable="false" MaxLength="9" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="true" MaxLength="25" />
+    <Property Name="Celular" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Cuil" Type="nvarchar" Nullable="true" MaxLength="11" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="LocalidadId" Type="bigint" Nullable="false" />
+    <Property Name="Calle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="ProvinciaLocalidad">
+    <End Role="Provincia" Type="MiniGymModel.Store.Provincias" Multiplicity="1" />
+    <End Role="Localidad" Type="MiniGymModel.Store.Localidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Localidad">
+        <PropertyRef Name="ProvinciaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocalidadPersona">
+    <End Role="Localidad" Type="MiniGymModel.Store.Localidades" Multiplicity="1" />
+    <End Role="Persona" Type="MiniGymModel.Store.Personas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="LocalidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MiniGymModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MiniGymModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Localidades" EntityType="MiniGymModel.LocalidadSet" />
+          <EntitySet Name="Provincias" EntityType="MiniGymModel.ProvinciaSet" />
+          <AssociationSet Name="ProvinciaLocalidad" Association="MiniGymModel.ProvinciaLocalidad">
+            <End Role="Provincia" EntitySet="Provincias" />
+            <End Role="Localidad" EntitySet="Localidades" />
+          </AssociationSet>
+          <EntitySet Name="Personas" EntityType="MiniGymModel.Persona" />
+          <AssociationSet Name="LocalidadPersona" Association="MiniGymModel.LocalidadPersona">
+            <End Role="Localidad" EntitySet="Localidades" />
+            <End Role="Persona" EntitySet="Personas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="LocalidadSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <Property Name="ProvinciaId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Provincia" Relationship="MiniGymModel.ProvinciaLocalidad" FromRole="Localidad" ToRole="Provincia" />
+          <Property Name="PersonaId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="MiniGymModel.LocalidadPersona" FromRole="Localidad" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="ProvinciaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="MiniGymModel.ProvinciaLocalidad" FromRole="Provincia" ToRole="Localidad" />
+        </EntityType>
+        <Association Name="ProvinciaLocalidad">
+          <End Type="MiniGymModel.ProvinciaSet" Role="Provincia" Multiplicity="1" />
+          <End Type="MiniGymModel.LocalidadSet" Role="Localidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Localidad">
+              <PropertyRef Name="ProvinciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Dni" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" Nullable="true" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="true" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Cuil" Type="String" Nullable="true" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Localidad" Relationship="MiniGymModel.LocalidadPersona" FromRole="Persona" ToRole="Localidad" />
+          <Property Name="LocalidadId" Type="Int64" Nullable="false" />
+          <Property Name="Calle" Type="String" Nullable="false" />
+          <Property Name="Numero" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="LocalidadPersona">
+          <End Type="MiniGymModel.LocalidadSet" Role="Localidad" Multiplicity="1" />
+          <End Type="MiniGymModel.Persona" Role="Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="LocalidadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MiniGymModelStoreContainer" CdmEntityContainer="MiniGymModelContainer">
+    <EntitySetMapping Name="Localidades">
+      <EntityTypeMapping TypeName="IsTypeOf(MiniGymModel.LocalidadSet)">
+        <MappingFragment StoreEntitySet="Localidades">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="ProvinciaId" ColumnName="ProvinciaId" />
+          <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincias">
+      <EntityTypeMapping TypeName="IsTypeOf(MiniGymModel.ProvinciaSet)">
+        <MappingFragment StoreEntitySet="Provincias">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="IsTypeOf(MiniGymModel.Persona)">
+        <MappingFragment StoreEntitySet="Personas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Cuil" ColumnName="Cuil" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="LocalidadId" ColumnName="LocalidadId" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
