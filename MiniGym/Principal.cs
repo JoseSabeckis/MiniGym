@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiniGym.Prestamo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,6 +67,18 @@ namespace MiniGym
         {
             var nuevo = new PersonaCarpeta.PersonaABM(Helpers.TipoOperacion.Nuevo);
             nuevo.ShowDialog();
+        }
+
+        private void verPlanesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var planes = new VerPlanes();
+            planes.ShowDialog();
+        }
+
+        private void nuevoPlanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var plan = new NuevoPlanCuota();
+            plan.ShowDialog();
         }
     }
 }

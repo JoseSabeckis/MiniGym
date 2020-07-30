@@ -72,9 +72,7 @@
     <Property Name="CodigoCredito" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="FechaFin" Type="datetime" Nullable="true" />
-    <Property Name="DineroPrestado" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="CantidadCuotas" Type="int" Nullable="false" />
-    <Property Name="TotalFinal" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="Notas" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EstadoPrestamo" Type="bigint" Nullable="false" />
     <Property Name="PersonaId" Type="bigint" Nullable="false" />
@@ -89,7 +87,6 @@
     <Property Name="ValorCuota" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ValorParcial" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="EstadoCuota" Type="bigint" Nullable="false" />
-    <Property Name="Interes" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
     <Property Name="Saldo" Type="decimal" Nullable="false" Precision="18" Scale="0" />

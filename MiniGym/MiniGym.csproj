@@ -59,6 +59,12 @@
     <Compile Include="Cuota.cs">
       <DependentUpon>MiniGymModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Cuota\CobrarCuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuota\CobrarCuota.Designer.cs">
+      <DependentUpon>CobrarCuota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cuota\Servicios\CuotaDto.cs" />
     <Compile Include="Cuota\Servicios\CuotaServicio.cs" />
     <Compile Include="Cuota\Servicios\ICuotaServicio.cs" />
@@ -151,9 +157,27 @@
     <Compile Include="PrestamoSet.cs">
       <DependentUpon>MiniGymModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Prestamo\AumentoCuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamo\AumentoCuota.Designer.cs">
+      <DependentUpon>AumentoCuota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamo\NuevoPlanCuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamo\NuevoPlanCuota.Designer.cs">
+      <DependentUpon>NuevoPlanCuota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prestamo\Servicios\IPrestamoServicio.cs" />
     <Compile Include="Prestamo\Servicios\PrestamoDto.cs" />
     <Compile Include="Prestamo\Servicios\PrestamoServicio.cs" />
+    <Compile Include="Prestamo\VerPlanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamo\VerPlanes.Designer.cs">
+      <DependentUpon>VerPlanes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +204,9 @@
     <Compile Include="ProvinciaSet.cs">
       <DependentUpon>MiniGymModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cuota\CobrarCuota.resx">
+      <DependentUpon>CobrarCuota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioBase\FormularioAbm.resx">
       <DependentUpon>FormularioAbm.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +230,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PersonaCarpeta\PersonaConsulta.resx">
       <DependentUpon>PersonaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamo\AumentoCuota.resx">
+      <DependentUpon>AumentoCuota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamo\NuevoPlanCuota.resx">
+      <DependentUpon>NuevoPlanCuota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamo\VerPlanes.resx">
+      <DependentUpon>VerPlanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

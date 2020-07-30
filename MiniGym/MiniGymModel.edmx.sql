@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/30/2020 18:04:26
+-- Date Created: 07/30/2020 18:50:11
 -- Generated from EDMX file: C:\Users\joses\source\repos\MiniGym\MiniGym\MiniGymModel.edmx
 -- --------------------------------------------------
 
@@ -23,6 +23,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_LocalidadPersona]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Personas] DROP CONSTRAINT [FK_LocalidadPersona];
 GO
+IF OBJECT_ID(N'[dbo].[FK_PrestamoCuota]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cuotas] DROP CONSTRAINT [FK_PrestamoCuota];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PersonaPrestamo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Prestamos] DROP CONSTRAINT [FK_PersonaPrestamo];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -36,6 +42,12 @@ IF OBJECT_ID(N'[dbo].[Provincias]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Personas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Personas];
+GO
+IF OBJECT_ID(N'[dbo].[Prestamos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Prestamos];
+GO
+IF OBJECT_ID(N'[dbo].[Cuotas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Cuotas];
 GO
 
 -- --------------------------------------------------
@@ -84,9 +96,7 @@ CREATE TABLE [dbo].[Prestamos] (
     [CodigoCredito] nvarchar(max)  NOT NULL,
     [FechaInicio] datetime  NOT NULL,
     [FechaFin] datetime  NULL,
-    [DineroPrestado] decimal(18,0)  NOT NULL,
     [CantidadCuotas] int  NOT NULL,
-    [TotalFinal] decimal(18,0)  NOT NULL,
     [Notas] nvarchar(max)  NOT NULL,
     [EstadoPrestamo] bigint  NOT NULL,
     [PersonaId] bigint  NOT NULL,
@@ -101,7 +111,6 @@ CREATE TABLE [dbo].[Cuotas] (
     [ValorCuota] decimal(18,0)  NOT NULL,
     [ValorParcial] decimal(18,0)  NOT NULL,
     [EstadoCuota] bigint  NOT NULL,
-    [Interes] decimal(18,0)  NOT NULL,
     [FechaInicio] datetime  NOT NULL,
     [FechaVencimiento] datetime  NOT NULL,
     [Saldo] decimal(18,0)  NOT NULL,

@@ -49,6 +49,9 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,7 +63,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
             this.sistemaToolStripMenuItem,
-            this.configuracionToolStripMenuItem});
+            this.configuracionToolStripMenuItem,
+            this.planesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(795, 24);
@@ -79,14 +83,14 @@
             // consultaClientesToolStripMenuItem
             // 
             this.consultaClientesToolStripMenuItem.Name = "consultaClientesToolStripMenuItem";
-            this.consultaClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaClientesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.consultaClientesToolStripMenuItem.Text = "Consulta Clientes";
             this.consultaClientesToolStripMenuItem.Click += new System.EventHandler(this.consultaClientesToolStripMenuItem_Click);
             // 
             // nuevoClienteToolStripMenuItem
             // 
             this.nuevoClienteToolStripMenuItem.Name = "nuevoClienteToolStripMenuItem";
-            this.nuevoClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoClienteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.nuevoClienteToolStripMenuItem.Text = "Nuevo Cliente";
             this.nuevoClienteToolStripMenuItem.Click += new System.EventHandler(this.nuevoClienteToolStripMenuItem_Click);
             // 
@@ -224,6 +228,29 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // planesToolStripMenuItem
+            // 
+            this.planesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verPlanesToolStripMenuItem,
+            this.nuevoPlanToolStripMenuItem});
+            this.planesToolStripMenuItem.Name = "planesToolStripMenuItem";
+            this.planesToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.planesToolStripMenuItem.Text = "Planes";
+            // 
+            // verPlanesToolStripMenuItem
+            // 
+            this.verPlanesToolStripMenuItem.Name = "verPlanesToolStripMenuItem";
+            this.verPlanesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verPlanesToolStripMenuItem.Text = "Ver Planes";
+            this.verPlanesToolStripMenuItem.Click += new System.EventHandler(this.verPlanesToolStripMenuItem_Click);
+            // 
+            // nuevoPlanToolStripMenuItem
+            // 
+            this.nuevoPlanToolStripMenuItem.Name = "nuevoPlanToolStripMenuItem";
+            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoPlanToolStripMenuItem.Text = "Nuevo Plan";
+            this.nuevoPlanToolStripMenuItem.Click += new System.EventHandler(this.nuevoPlanToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -236,6 +263,10 @@
             this.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(811, 457);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(811, 457);
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
@@ -270,6 +301,9 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblhora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verPlanesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoPlanToolStripMenuItem;
     }
 }
 
