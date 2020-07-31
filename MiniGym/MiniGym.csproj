@@ -163,11 +163,23 @@
     <Compile Include="Prestamo\AumentoCuota.Designer.cs">
       <DependentUpon>AumentoCuota.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prestamo\Morosos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamo\Morosos.Designer.cs">
+      <DependentUpon>Morosos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prestamo\NuevoPlanCuota.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Prestamo\NuevoPlanCuota.Designer.cs">
       <DependentUpon>NuevoPlanCuota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamo\PrestamosDeUnCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamo\PrestamosDeUnCliente.Designer.cs">
+      <DependentUpon>PrestamosDeUnCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Prestamo\Servicios\IPrestamoServicio.cs" />
     <Compile Include="Prestamo\Servicios\PrestamoDto.cs" />
@@ -234,8 +246,14 @@
     <EmbeddedResource Include="Prestamo\AumentoCuota.resx">
       <DependentUpon>AumentoCuota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Prestamo\Morosos.resx">
+      <DependentUpon>Morosos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prestamo\NuevoPlanCuota.resx">
       <DependentUpon>NuevoPlanCuota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamo\PrestamosDeUnCliente.resx">
+      <DependentUpon>PrestamosDeUnCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prestamo\VerPlanes.resx">
       <DependentUpon>VerPlanes.cs</DependentUpon>

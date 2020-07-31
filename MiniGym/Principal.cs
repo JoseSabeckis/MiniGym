@@ -1,4 +1,5 @@
-﻿using MiniGym.Prestamo;
+﻿using MiniGym.Cuota.Servicios;
+using MiniGym.Prestamo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,13 @@ namespace MiniGym
 {
     public partial class Principal : Form
     {
+        private readonly ICuotaServicio cuotaServicio;
+
         public Principal()
         {
             InitializeComponent();
+
+            cuotaServicio = new CuotaServicio();
         }
 
         private void consultaProvinciasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,6 +84,47 @@ namespace MiniGym
         {
             var plan = new NuevoPlanCuota(Helpers.TipoOperacion.Nuevo);
             plan.ShowDialog();
+        }
+
+        private void verMorososToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var moroso = new Morosos();
+            moroso.ShowDialog();
+        }
+
+        private void btnMorosos_Click(object sender, EventArgs e)
+        {
+            var moroso = new Morosos();
+            moroso.ShowDialog();
+        }
+
+        private void btnVerPlanes_Click(object sender, EventArgs e)
+        {
+            var planes = new VerPlanes();
+            planes.ShowDialog();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            var plan = new NuevoPlanCuota(Helpers.TipoOperacion.Nuevo);
+            plan.ShowDialog();
+        }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            var nuevo = new PersonaCarpeta.PersonaABM(Helpers.TipoOperacion.Nuevo);
+            nuevo.ShowDialog();
+        }
+
+        private void btnVerClientes_Click(object sender, EventArgs e)
+        {
+            var cliente = new PersonaCarpeta.PersonaConsulta();
+            cliente.ShowDialog();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            cuotaServicio.VerificarVencimientoDeCuotasYPonerImpagas();
         }
     }
 }

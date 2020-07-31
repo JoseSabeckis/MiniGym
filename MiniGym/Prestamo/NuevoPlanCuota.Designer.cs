@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPlanCuota));
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.dtpFechaPrestamo = new System.Windows.Forms.DateTimePicker();
+            this.lblfecha = new System.Windows.Forms.Label();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblfecha = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtCredito = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
@@ -51,14 +52,13 @@
             this.nudValorCuota = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudValorCuota)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
@@ -80,6 +80,26 @@
             this.panel5.Size = new System.Drawing.Size(878, 123);
             this.panel5.TabIndex = 5;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dtpFechaPrestamo);
+            this.panel1.Controls.Add(this.lblfecha);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(714, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(160, 119);
+            this.panel1.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 19);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Fecha:";
+            // 
             // dtpFechaPrestamo
             // 
             this.dtpFechaPrestamo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -87,6 +107,15 @@
             this.dtpFechaPrestamo.Name = "dtpFechaPrestamo";
             this.dtpFechaPrestamo.Size = new System.Drawing.Size(103, 25);
             this.dtpFechaPrestamo.TabIndex = 20;
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Location = new System.Drawing.Point(21, 77);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(39, 19);
+            this.lblfecha.TabIndex = 6;
+            this.lblfecha.Text = "-----";
             // 
             // txtDni
             // 
@@ -114,24 +143,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblfecha
-            // 
-            this.lblfecha.AutoSize = true;
-            this.lblfecha.Location = new System.Drawing.Point(21, 77);
-            this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(39, 19);
-            this.lblfecha.TabIndex = 6;
-            this.lblfecha.Text = "-----";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 19);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Fecha:";
             // 
             // txtCredito
             // 
@@ -290,17 +301,6 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "Notas:";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dtpFechaPrestamo);
-            this.panel1.Controls.Add(this.lblfecha);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(714, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 119);
-            this.panel1.TabIndex = 21;
-            // 
             // NuevoPlanCuota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -313,7 +313,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(894, 355);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(894, 355);
             this.Name = "NuevoPlanCuota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NuevoPlanCuota";
@@ -322,6 +324,8 @@
             this.Controls.SetChildIndex(this.panel6, 0);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -330,8 +334,6 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudValorCuota)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
