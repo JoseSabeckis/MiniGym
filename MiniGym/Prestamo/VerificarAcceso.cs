@@ -60,19 +60,19 @@ namespace MiniGym.Prestamo
                 return;
             }           
 
-            var persona = personaServicio.ObtenerPorDni(txtDni.Text);
-
-            if (prestamoServicio.ObtenerPrestamosPorClienteId(persona.Id).Count() == 0)
-            {
-                MessageBox.Show("Este Cliente No Tiene Un Plan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                return;
-            }
+            var persona = personaServicio.ObtenerPorDni(txtDni.Text);           
 
             if (persona == null)
             {
                 pnlAcceso.BackColor = Color.Yellow;
                 lblAcceso.Text = "-- No Se Encontro El Cliente --";
+
+                return;
+            }
+
+            if (prestamoServicio.ObtenerPrestamosPorClienteId(persona.Id).Count() == 0)
+            {
+                MessageBox.Show("Este Cliente No Tiene Un Plan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }

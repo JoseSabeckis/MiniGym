@@ -111,7 +111,7 @@ namespace MiniGym.PersonaCarpeta
             }
 
             var cliente = _clienteServicio.ObtenerPorId(entidadId.Value);
-            var localidad = _localidadServicio.ObtenerPorId(cliente.Id);
+            var localidad = _localidadServicio.ObtenerPorId(cliente.LocalidadId);
 
             // Datos Personales
             txtApellido.Text = cliente.Apellido;
