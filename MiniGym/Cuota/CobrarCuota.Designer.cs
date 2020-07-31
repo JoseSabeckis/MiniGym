@@ -44,6 +44,7 @@
             this.gpbFacturas = new System.Windows.Forms.GroupBox();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.brnCobrar = new System.Windows.Forms.Button();
             this.txtNumeroCuota = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
@@ -62,7 +63,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.brnCobrar = new System.Windows.Forms.Button();
+            this.btnNotas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gpbFacturas.SuspendLayout();
@@ -238,6 +239,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.btnNotas);
             this.panel8.Controls.Add(this.brnCobrar);
             this.panel8.Controls.Add(this.txtNumeroCuota);
             this.panel8.Controls.Add(this.label3);
@@ -250,6 +252,19 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(544, 148);
             this.panel8.TabIndex = 65;
+            // 
+            // brnCobrar
+            // 
+            this.brnCobrar.BackColor = System.Drawing.Color.Lime;
+            this.brnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.brnCobrar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnCobrar.Location = new System.Drawing.Point(382, 88);
+            this.brnCobrar.Name = "brnCobrar";
+            this.brnCobrar.Size = new System.Drawing.Size(155, 55);
+            this.brnCobrar.TabIndex = 67;
+            this.brnCobrar.Text = "Cobrar";
+            this.brnCobrar.UseVisualStyleBackColor = false;
+            this.brnCobrar.Click += new System.EventHandler(this.brnCobrar_Click);
             // 
             // txtNumeroCuota
             // 
@@ -436,18 +451,17 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Cant. Cuotas:";
             // 
-            // brnCobrar
+            // btnNotas
             // 
-            this.brnCobrar.BackColor = System.Drawing.Color.Lime;
-            this.brnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.brnCobrar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnCobrar.Location = new System.Drawing.Point(382, 88);
-            this.brnCobrar.Name = "brnCobrar";
-            this.brnCobrar.Size = new System.Drawing.Size(155, 55);
-            this.brnCobrar.TabIndex = 67;
-            this.brnCobrar.Text = "Cobrar";
-            this.brnCobrar.UseVisualStyleBackColor = false;
-            this.brnCobrar.Click += new System.EventHandler(this.brnCobrar_Click);
+            this.btnNotas.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNotas.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotas.Location = new System.Drawing.Point(414, 12);
+            this.btnNotas.Name = "btnNotas";
+            this.btnNotas.Size = new System.Drawing.Size(79, 44);
+            this.btnNotas.TabIndex = 68;
+            this.btnNotas.Text = "Notas";
+            this.btnNotas.UseVisualStyleBackColor = false;
+            this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
             // 
             // CobrarCuota
             // 
@@ -519,5 +533,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnNotas;
     }
 }

@@ -570,5 +570,19 @@ namespace MiniGym.Cuota
                 MessageBox.Show("Esta Cuota Se Encuentra Pagada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            var prestamo = prestamoServicio.BuscarPrestamoPorId(_ComprobanteId);
+
+            if (prestamo.Notas != string.Empty)
+            {
+                MessageBox.Show($"Notas Del Plan: {prestamo.Notas} ", "Notas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No Hay Notas En Este Plan", "Notas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }
