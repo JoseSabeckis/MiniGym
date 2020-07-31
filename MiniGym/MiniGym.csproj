@@ -184,6 +184,12 @@
     <Compile Include="Prestamo\Servicios\IPrestamoServicio.cs" />
     <Compile Include="Prestamo\Servicios\PrestamoDto.cs" />
     <Compile Include="Prestamo\Servicios\PrestamoServicio.cs" />
+    <Compile Include="Prestamo\VerificarAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamo\VerificarAcceso.Designer.cs">
+      <DependentUpon>VerificarAcceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prestamo\VerPlanes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     <EmbeddedResource Include="Prestamo\PrestamosDeUnCliente.resx">
       <DependentUpon>PrestamosDeUnCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Prestamo\VerificarAcceso.resx">
+      <DependentUpon>VerificarAcceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prestamo\VerPlanes.resx">
       <DependentUpon>VerPlanes.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +282,9 @@
     </Compile>
     <EmbeddedResource Include="ProvinciaCarpeta\ProvinciaABM.resx">
       <DependentUpon>ProvinciaABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProvinciaCarpeta\ProvinciaConsulta.resx">
+      <DependentUpon>ProvinciaConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="MiniGymModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -412,9 +424,7 @@
   <ItemGroup>
     <None Include="Resources\wallet_114883.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clientes\Servicios\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="MiniGymModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

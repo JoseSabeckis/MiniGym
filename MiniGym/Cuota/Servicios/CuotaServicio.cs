@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiniGym.PersonaCarpeta.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -150,6 +151,42 @@ namespace MiniGym.Cuota.Servicios
 
                 return cuotasVencidas;
 
+            }
+
+        }
+
+        public bool VerificarCuotasVencidasPorClienteDni(PersonaDto personaDto)
+        {
+
+            using (var contex = new MiniGymModelContainer())
+            {
+                var prestamos = contex.Prestamos.Where(x => x.PersonaId == personaDto.Id);
+
+                foreach (var item in prestamos)
+                {
+                    var cuotasVencidas = contex.Cuotas.Where(x => x.EstadoCuota == EstadoCuota.Impaga && x.PrestamoId == item.Id).Select(x => new CuotaDto
+                    {
+
+                        CuotaId = x.Id,
+                        EstadoCuota = x.EstadoCuota,
+                        FechaInicio = x.FechaInicio,
+                        FechaVencimiento = x.FechaVencimiento,
+                        NumeroCuota = x.NumeroCuota,
+                        Saldo = x.Saldo,
+                        ValorCuota = x.ValorCuota,
+                        ValorParcial = x.ValorParcial,
+                        PrestamoId = x.PrestamoId
+
+                    }).ToList();
+
+                    if (cuotasVencidas.Count() > 0)
+                    {
+                        return true;
+                    }
+
+                }
+
+                return false;
             }
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiniGym.PersonaCarpeta.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace MiniGym.Cuota.Servicios
         void CargarCuotas(int cantidadCuotas, CuotaDto cuota, DateTime fechainiciofinal);
 
         IEnumerable<CuotaDto> ObtenerCuotasPorIDComprobante(long prestamoId);
+
+        bool VerificarCuotasVencidasPorClienteDni(PersonaDto personaDto);
 
         void CobrarCuota(CuotaDto cuota);
 

@@ -133,13 +133,14 @@
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGrilla.Location = new System.Drawing.Point(0, 39);
-            this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGrilla.MultiSelect = false;
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGrilla.Size = new System.Drawing.Size(1099, 536);
             this.dgvGrilla.TabIndex = 7;
+            this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter_1);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick_1);
             // 
             // pnlBusqueda
@@ -152,7 +153,7 @@
             this.pnlBusqueda.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBusqueda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBusqueda.Location = new System.Drawing.Point(0, 520);
-            this.pnlBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBusqueda.Name = "pnlBusqueda";
             this.pnlBusqueda.Size = new System.Drawing.Size(1099, 55);
             this.pnlBusqueda.TabIndex = 8;
@@ -168,7 +169,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscar.Location = new System.Drawing.Point(990, 0);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(109, 55);
             this.btnBuscar.TabIndex = 4;
@@ -181,7 +182,7 @@
             this.imgBuscar.Dock = System.Windows.Forms.DockStyle.Left;
             this.imgBuscar.Image = global::MiniGym.Properties.Resources.BuscarDos;
             this.imgBuscar.Location = new System.Drawing.Point(0, 0);
-            this.imgBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.imgBuscar.Name = "imgBuscar";
             this.imgBuscar.Size = new System.Drawing.Size(56, 55);
             this.imgBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,7 +206,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(144, 15);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(764, 21);
             this.txtBuscar.TabIndex = 0;
@@ -219,7 +220,7 @@
             this.Controls.Add(this.pnlBusqueda);
             this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.menuAccesoRapido);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FormularioConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioConsulta";

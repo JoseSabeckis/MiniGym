@@ -126,5 +126,11 @@ namespace MiniGym
         {
             cuotaServicio.VerificarVencimientoDeCuotasYPonerImpagas();
         }
+
+        private void btnAcceso_Click(object sender, EventArgs e)
+        {
+            var acceso = new VerificarAcceso();
+            acceso.ShowDialog();
+        }
     }
 }

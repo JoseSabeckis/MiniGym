@@ -46,20 +46,20 @@
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.morososToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verMorososToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAcceso = new System.Windows.Forms.Button();
+            this.btnVerClientes = new System.Windows.Forms.Button();
+            this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnVerPlanes = new System.Windows.Forms.Button();
+            this.btnMorosos = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.morososToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verMorososToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMorosos = new System.Windows.Forms.Button();
-            this.btnVerPlanes = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnNuevoCliente = new System.Windows.Forms.Button();
-            this.btnVerClientes = new System.Windows.Forms.Button();
-            this.btnEntrenadores = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,14 +93,14 @@
             // consultaClientesToolStripMenuItem
             // 
             this.consultaClientesToolStripMenuItem.Name = "consultaClientesToolStripMenuItem";
-            this.consultaClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaClientesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.consultaClientesToolStripMenuItem.Text = "Consulta Clientes";
             this.consultaClientesToolStripMenuItem.Click += new System.EventHandler(this.consultaClientesToolStripMenuItem_Click);
             // 
             // nuevoClienteToolStripMenuItem
             // 
             this.nuevoClienteToolStripMenuItem.Name = "nuevoClienteToolStripMenuItem";
-            this.nuevoClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoClienteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.nuevoClienteToolStripMenuItem.Text = "Nuevo Cliente";
             this.nuevoClienteToolStripMenuItem.Click += new System.EventHandler(this.nuevoClienteToolStripMenuItem_Click);
             // 
@@ -198,6 +198,21 @@
             this.nuevoPlanToolStripMenuItem.Text = "Nuevo Plan";
             this.nuevoPlanToolStripMenuItem.Click += new System.EventHandler(this.nuevoPlanToolStripMenuItem_Click);
             // 
+            // morososToolStripMenuItem
+            // 
+            this.morososToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verMorososToolStripMenuItem});
+            this.morososToolStripMenuItem.Name = "morososToolStripMenuItem";
+            this.morososToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.morososToolStripMenuItem.Text = "Morosos";
+            // 
+            // verMorososToolStripMenuItem
+            // 
+            this.verMorososToolStripMenuItem.Name = "verMorososToolStripMenuItem";
+            this.verMorososToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.verMorososToolStripMenuItem.Text = "Ver Morosos";
+            this.verMorososToolStripMenuItem.Click += new System.EventHandler(this.verMorososToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -214,7 +229,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.btnEntrenadores);
+            this.panel3.Controls.Add(this.btnAcceso);
             this.panel3.Controls.Add(this.btnVerClientes);
             this.panel3.Controls.Add(this.btnNuevoCliente);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -222,6 +237,45 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(290, 390);
             this.panel3.TabIndex = 1;
+            // 
+            // btnAcceso
+            // 
+            this.btnAcceso.BackColor = System.Drawing.Color.Cyan;
+            this.btnAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAcceso.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcceso.Location = new System.Drawing.Point(31, 57);
+            this.btnAcceso.Name = "btnAcceso";
+            this.btnAcceso.Size = new System.Drawing.Size(193, 46);
+            this.btnAcceso.TabIndex = 46;
+            this.btnAcceso.Text = "Verificar Acceso";
+            this.btnAcceso.UseVisualStyleBackColor = false;
+            this.btnAcceso.Click += new System.EventHandler(this.btnAcceso_Click);
+            // 
+            // btnVerClientes
+            // 
+            this.btnVerClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnVerClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerClientes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerClientes.Location = new System.Drawing.Point(31, 141);
+            this.btnVerClientes.Name = "btnVerClientes";
+            this.btnVerClientes.Size = new System.Drawing.Size(193, 46);
+            this.btnVerClientes.TabIndex = 45;
+            this.btnVerClientes.Text = "Ver Clientes";
+            this.btnVerClientes.UseVisualStyleBackColor = false;
+            this.btnVerClientes.Click += new System.EventHandler(this.btnVerClientes_Click);
+            // 
+            // btnNuevoCliente
+            // 
+            this.btnNuevoCliente.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoCliente.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoCliente.Location = new System.Drawing.Point(31, 221);
+            this.btnNuevoCliente.Name = "btnNuevoCliente";
+            this.btnNuevoCliente.Size = new System.Drawing.Size(193, 46);
+            this.btnNuevoCliente.TabIndex = 44;
+            this.btnNuevoCliente.Text = "Nuevo Cliente";
+            this.btnNuevoCliente.UseVisualStyleBackColor = false;
+            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
             // 
             // panel2
             // 
@@ -237,6 +291,45 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(419, 390);
             this.panel2.TabIndex = 0;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(202, 221);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(193, 46);
+            this.btnNuevo.TabIndex = 45;
+            this.btnNuevo.Text = "Nuevo Plan";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnVerPlanes
+            // 
+            this.btnVerPlanes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnVerPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerPlanes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerPlanes.Location = new System.Drawing.Point(202, 141);
+            this.btnVerPlanes.Name = "btnVerPlanes";
+            this.btnVerPlanes.Size = new System.Drawing.Size(193, 46);
+            this.btnVerPlanes.TabIndex = 44;
+            this.btnVerPlanes.Text = "Ver Planes";
+            this.btnVerPlanes.UseVisualStyleBackColor = false;
+            this.btnVerPlanes.Click += new System.EventHandler(this.btnVerPlanes_Click);
+            // 
+            // btnMorosos
+            // 
+            this.btnMorosos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnMorosos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMorosos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMorosos.Location = new System.Drawing.Point(202, 57);
+            this.btnMorosos.Name = "btnMorosos";
+            this.btnMorosos.Size = new System.Drawing.Size(193, 46);
+            this.btnMorosos.TabIndex = 43;
+            this.btnMorosos.Text = "Clientes Con Deudas";
+            this.btnMorosos.UseVisualStyleBackColor = false;
+            this.btnMorosos.Click += new System.EventHandler(this.btnMorosos_Click);
             // 
             // lblFecha
             // 
@@ -266,98 +359,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // morososToolStripMenuItem
-            // 
-            this.morososToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verMorososToolStripMenuItem});
-            this.morososToolStripMenuItem.Name = "morososToolStripMenuItem";
-            this.morososToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.morososToolStripMenuItem.Text = "Morosos";
-            // 
-            // verMorososToolStripMenuItem
-            // 
-            this.verMorososToolStripMenuItem.Name = "verMorososToolStripMenuItem";
-            this.verMorososToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verMorososToolStripMenuItem.Text = "Ver Morosos";
-            this.verMorososToolStripMenuItem.Click += new System.EventHandler(this.verMorososToolStripMenuItem_Click);
-            // 
-            // btnMorosos
-            // 
-            this.btnMorosos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnMorosos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMorosos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMorosos.Location = new System.Drawing.Point(202, 57);
-            this.btnMorosos.Name = "btnMorosos";
-            this.btnMorosos.Size = new System.Drawing.Size(193, 46);
-            this.btnMorosos.TabIndex = 43;
-            this.btnMorosos.Text = "Clientes Con Deudas";
-            this.btnMorosos.UseVisualStyleBackColor = false;
-            this.btnMorosos.Click += new System.EventHandler(this.btnMorosos_Click);
-            // 
-            // btnVerPlanes
-            // 
-            this.btnVerPlanes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnVerPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVerPlanes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerPlanes.Location = new System.Drawing.Point(202, 141);
-            this.btnVerPlanes.Name = "btnVerPlanes";
-            this.btnVerPlanes.Size = new System.Drawing.Size(193, 46);
-            this.btnVerPlanes.TabIndex = 44;
-            this.btnVerPlanes.Text = "Ver Planes";
-            this.btnVerPlanes.UseVisualStyleBackColor = false;
-            this.btnVerPlanes.Click += new System.EventHandler(this.btnVerPlanes_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(202, 221);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(193, 46);
-            this.btnNuevo.TabIndex = 45;
-            this.btnNuevo.Text = "Nuevo Plan";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnNuevoCliente
-            // 
-            this.btnNuevoCliente.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoCliente.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoCliente.Location = new System.Drawing.Point(31, 221);
-            this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(193, 46);
-            this.btnNuevoCliente.TabIndex = 44;
-            this.btnNuevoCliente.Text = "Nuevo Cliente";
-            this.btnNuevoCliente.UseVisualStyleBackColor = false;
-            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
-            // 
-            // btnVerClientes
-            // 
-            this.btnVerClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnVerClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVerClientes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerClientes.Location = new System.Drawing.Point(31, 141);
-            this.btnVerClientes.Name = "btnVerClientes";
-            this.btnVerClientes.Size = new System.Drawing.Size(193, 46);
-            this.btnVerClientes.TabIndex = 45;
-            this.btnVerClientes.Text = "Ver Clientes";
-            this.btnVerClientes.UseVisualStyleBackColor = false;
-            this.btnVerClientes.Click += new System.EventHandler(this.btnVerClientes_Click);
-            // 
-            // btnEntrenadores
-            // 
-            this.btnEntrenadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEntrenadores.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEntrenadores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrenadores.Location = new System.Drawing.Point(31, 57);
-            this.btnEntrenadores.Name = "btnEntrenadores";
-            this.btnEntrenadores.Size = new System.Drawing.Size(193, 46);
-            this.btnEntrenadores.TabIndex = 46;
-            this.btnEntrenadores.Text = "Entrenadores";
-            this.btnEntrenadores.UseVisualStyleBackColor = false;
             // 
             // Principal
             // 
@@ -421,7 +422,7 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnVerClientes;
         private System.Windows.Forms.Button btnNuevoCliente;
-        private System.Windows.Forms.Button btnEntrenadores;
+        private System.Windows.Forms.Button btnAcceso;
     }
 }
 
