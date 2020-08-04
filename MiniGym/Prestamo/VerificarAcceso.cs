@@ -89,5 +89,13 @@ namespace MiniGym.Prestamo
             }
 
         }
+
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnVerificar.PerformClick();
+            }
+        }
     }
 }
