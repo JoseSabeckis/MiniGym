@@ -109,7 +109,7 @@
             this.MinimumSize = new System.Drawing.Size(709, 434);
             this.Name = "ElejirCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ElejirCliente";
+            this.Text = "Elejir Cliente";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();

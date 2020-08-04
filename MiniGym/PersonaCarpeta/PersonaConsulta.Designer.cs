@@ -41,7 +41,7 @@
             this.MinimumSize = new System.Drawing.Size(1049, 529);
             this.Name = "PersonaConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PersonaConsulta";
+            this.Text = "Persona Consulta";
             this.ResumeLayout(false);
             this.PerformLayout();
 

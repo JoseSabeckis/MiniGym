@@ -450,7 +450,7 @@
             this.MinimumSize = new System.Drawing.Size(816, 524);
             this.Name = "PersonaABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PersonaABM";
+            this.Text = "Persona";
             this.Controls.SetChildIndex(this.txtApellido, 0);
             this.Controls.SetChildIndex(this.lblApellido, 0);
             this.Controls.SetChildIndex(this.txtDni, 0);

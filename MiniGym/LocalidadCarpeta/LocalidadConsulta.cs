@@ -97,7 +97,7 @@ namespace MiniGym.Localidad
             {
                 if (_localidadServicio.ObtenerLocalidadesDeDirecciones(((LocalidadDto)EntidadSeleccionada).Id))
                 {
-                    MessageBox.Show("Esta Localidad Esta Relacionada a una Direccion, Si Tiene Problemas Solo Cambie El Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Esta Localidad Esta Relacionada a una Cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     return;
                 }

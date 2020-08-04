@@ -1,6 +1,7 @@
 ﻿using MiniGym.FormularioBase;
 using MiniGym.Helpers;
 using MiniGym.PersonaCarpeta.Servicios;
+using MiniGym.Prestamo.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,16 +17,20 @@ namespace MiniGym.PersonaCarpeta
     public partial class PersonaConsulta : FormularioConsulta
     {
         private readonly IPersonaServicio _personaServicio;
+        private readonly IPrestamoServicio _prestamoServicio;
 
         public PersonaConsulta()
             : this(new PersonaServicio())
         {
             InitializeComponent();
+
+            _prestamoServicio = new PrestamoServicio();
         }
 
         public PersonaConsulta(IPersonaServicio empleadoServicio)
         {
             _personaServicio = empleadoServicio;
+            
         }
 
         public override void FormatearGrilla(DataGridView grilla)
@@ -116,6 +121,13 @@ namespace MiniGym.PersonaCarpeta
                 if (EntidadId.Value == 1)
                 {
                     MessageBox.Show("Este Cliente Fue Creado Como Administrador, No Puede Eliminarse.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                }
+
+                if (_prestamoServicio.ObtenerPrestamosPorClienteIdSinPrestamosTerminados(EntidadId.Value).Count() != 0)
+                {
+                    MessageBox.Show("Este Cliente Tiene Planes EnProceso!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     return;
                 }

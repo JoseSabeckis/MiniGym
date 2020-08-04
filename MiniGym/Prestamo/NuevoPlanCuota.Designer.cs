@@ -318,7 +318,7 @@
             this.MinimumSize = new System.Drawing.Size(894, 355);
             this.Name = "NuevoPlanCuota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "NuevoPlanCuota";
+            this.Text = "Nuevo Plan Cuota";
             this.Load += new System.EventHandler(this.NuevoPlanCuota_Load);
             this.Controls.SetChildIndex(this.panel5, 0);
             this.Controls.SetChildIndex(this.panel6, 0);

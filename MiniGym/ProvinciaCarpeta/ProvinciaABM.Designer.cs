@@ -90,7 +90,7 @@
             this.MinimumSize = new System.Drawing.Size(586, 287);
             this.Name = "ProvinciaABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ProvinciaABM";
+            this.Text = "Provincia";
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.txtDescripcion, 0);
             this.Controls.SetChildIndex(this.label25, 0);

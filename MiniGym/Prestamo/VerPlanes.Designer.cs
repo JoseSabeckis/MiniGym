@@ -205,7 +205,7 @@
             this.MinimizeBox = false;
             this.Name = "VerPlanes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "VerPlanes";
+            this.Text = "Ver Planes";
             this.Load += new System.EventHandler(this.VerPrestamos_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

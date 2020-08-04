@@ -119,7 +119,7 @@
             this.MinimumSize = new System.Drawing.Size(875, 448);
             this.Name = "PrestamosDeUnCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PrestamosDeUnCliente";
+            this.Text = "Prestamos De Un Cliente";
             this.Load += new System.EventHandler(this.PrestamosDeUnCliente_Load);
             this.gpbFacturas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
