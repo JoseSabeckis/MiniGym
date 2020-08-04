@@ -118,12 +118,6 @@ namespace MiniGym.PersonaCarpeta
             }
             else
             {
-                if (EntidadId.Value == 1)
-                {
-                    MessageBox.Show("Este Cliente Fue Creado Como Administrador, No Puede Eliminarse.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    return;
-                }
 
                 if (_prestamoServicio.ObtenerPrestamosPorClienteIdSinPrestamosTerminados(EntidadId.Value).Count() != 0)
                 {
