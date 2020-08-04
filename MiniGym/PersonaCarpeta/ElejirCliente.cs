@@ -95,5 +95,13 @@ namespace MiniGym.PersonaCarpeta
             dgvGrilla.DataSource = _clienteServicio.Obtener(txtBusqueda.Text);
             FormaltearGrilla();
         }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
     }
 }
