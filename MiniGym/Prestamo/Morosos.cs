@@ -109,5 +109,23 @@ namespace MiniGym.Prestamo
 
             CargarGrilla();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBusquedaCliente.Text == string.Empty)
+            {
+                return;
+            }
+
+            //traer los clientes
+            var ListaClientes = clienteServicio.ObtenerList(txtBusquedaCliente.Text);
+
+            var resultado = prestamoServicio.ObtenerPrestamosAdeudadosList(ListaClientes);
+
+
+            dgvGrilla.DataSource = resultado;
+
+            FormaltearGrilla();
+        }
     }
 }

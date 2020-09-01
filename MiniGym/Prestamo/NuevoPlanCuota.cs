@@ -64,6 +64,8 @@ namespace MiniGym.Prestamo
                 txtDni.Text = $"{auxClienteEncontrado.Dni}";
 
             }
+
+            TraerCodigoCredito();
         }
 
         public override bool EjecutarComandoNuevo()
@@ -195,6 +197,11 @@ namespace MiniGym.Prestamo
             nudValorCuota.Value = 0;
             txtDescripcion.Text = $"{DateTime.Now.Year}";
             txtNotas.Text = "";
+            TraerCodigoCredito();
+        }
+
+        private void nudValorCuota_ValueChanged(object sender, EventArgs e)
+        {
             TraerCodigoCredito();
         }
     }

@@ -281,6 +281,7 @@
             this.nudValorCuota.Name = "nudValorCuota";
             this.nudValorCuota.Size = new System.Drawing.Size(112, 27);
             this.nudValorCuota.TabIndex = 18;
+            this.nudValorCuota.ValueChanged += new System.EventHandler(this.nudValorCuota_ValueChanged);
             // 
             // label12
             // 
