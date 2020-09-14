@@ -106,7 +106,7 @@ namespace MiniGym.Prestamo
 
 
             grilla.Columns["FechaInicio"].Visible = true;
-            grilla.Columns["FechaInicio"].Width = 100;
+            grilla.Columns["FechaInicio"].Width = 200;
             grilla.Columns["FechaInicio"].HeaderText = @"FechaInicio";
             grilla.Columns["FechaInicio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["FechaInicio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;

@@ -35,6 +35,8 @@ namespace MiniGym.Prestamo
         {
             txtDni.KeyPress += Validacion.NoSimbolos;
             txtDni.KeyPress += Validacion.NoLetras;
+
+            cuotaServicio.VerificarVencimientoDeCuotasYPonerImpagas();
         }
 
         private void btnVerificar_Click(object sender, EventArgs e)
@@ -81,17 +83,29 @@ namespace MiniGym.Prestamo
             {
                 pnlAcceso.BackColor = Color.Red;
                 lblAcceso.Text = "!-- Tiene Cuotas Impagas --!";
+
+                MessageBox.Show("-- Tiene Cuotas Impagas --", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 pnlAcceso.BackColor = Color.Green;
                 lblAcceso.Text = "--- Puede Pasar Esta Al Dia ---";
+
+                MessageBox.Show("-- PUEDE PASAR --", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
 
         private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtDni.Text))
+            {
+                if ((char.IsWhiteSpace(e.KeyChar)))
+                {
+                    e.Handled = true;
+                }
+            }
+
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnVerificar.PerformClick();

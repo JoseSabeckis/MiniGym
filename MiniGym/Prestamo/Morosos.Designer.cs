@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Morosos));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.gpbFacturas = new System.Windows.Forms.GroupBox();
-            this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.gpbFacturas = new System.Windows.Forms.GroupBox();
+            this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.gpbFacturas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -53,6 +53,35 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(881, 385);
             this.panel3.TabIndex = 66;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FloralWhite;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(687, 6);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(123, 32);
+            this.btnBuscar.TabIndex = 64;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(83, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Cliente";
+            // 
+            // txtBusquedaCliente
+            // 
+            this.txtBusquedaCliente.Location = new System.Drawing.Point(141, 11);
+            this.txtBusquedaCliente.Name = "txtBusquedaCliente";
+            this.txtBusquedaCliente.Size = new System.Drawing.Size(530, 22);
+            this.txtBusquedaCliente.TabIndex = 63;
             // 
             // label4
             // 
@@ -92,36 +121,6 @@
             this.dgvGrilla.TabIndex = 0;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FloralWhite;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(687, 6);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(123, 32);
-            this.btnBuscar.TabIndex = 64;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Cliente";
-            // 
-            // txtBusquedaCliente
-            // 
-            this.txtBusquedaCliente.Enabled = false;
-            this.txtBusquedaCliente.Location = new System.Drawing.Point(141, 11);
-            this.txtBusquedaCliente.Name = "txtBusquedaCliente";
-            this.txtBusquedaCliente.Size = new System.Drawing.Size(530, 22);
-            this.txtBusquedaCliente.TabIndex = 63;
             // 
             // Morosos
             // 
