@@ -29,6 +29,8 @@ namespace MiniGym.Prestamo.Servicios
 
         IEnumerable<PrestamoDto> ObtenerPrestamosPorClienteDni(string ClienteDni);
 
+        PrestamoDto ObtenerPrestamoPorClienteDniEnProceso(string ClienteDni);
+
         IEnumerable<PrestamoDto> ObtenerPrestamosPorClienteDniSinTerminado(string ClienteDni);
 
         List<PersonaCarpeta.Servicios.PersonaDto> ObtenerPrestamosAdeudadosList(List<PersonaCarpeta.Servicios.PersonaDto> ListaClientes);

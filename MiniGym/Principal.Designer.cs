@@ -287,9 +287,9 @@
             this.panel2.Controls.Add(this.lblFecha);
             this.panel2.Controls.Add(this.lblhora);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(372, 0);
+            this.panel2.Location = new System.Drawing.Point(328, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(419, 390);
+            this.panel2.Size = new System.Drawing.Size(463, 390);
             this.panel2.TabIndex = 0;
             // 
             // btnNuevo
@@ -297,7 +297,7 @@
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(202, 221);
+            this.btnNuevo.Location = new System.Drawing.Point(218, 221);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(193, 46);
             this.btnNuevo.TabIndex = 45;
@@ -310,7 +310,7 @@
             this.btnVerPlanes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnVerPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVerPlanes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerPlanes.Location = new System.Drawing.Point(202, 141);
+            this.btnVerPlanes.Location = new System.Drawing.Point(218, 141);
             this.btnVerPlanes.Name = "btnVerPlanes";
             this.btnVerPlanes.Size = new System.Drawing.Size(193, 46);
             this.btnVerPlanes.TabIndex = 44;
@@ -323,7 +323,7 @@
             this.btnMorosos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnMorosos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMorosos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMorosos.Location = new System.Drawing.Point(202, 57);
+            this.btnMorosos.Location = new System.Drawing.Point(218, 57);
             this.btnMorosos.Name = "btnMorosos";
             this.btnMorosos.Size = new System.Drawing.Size(193, 46);
             this.btnMorosos.TabIndex = 43;
@@ -333,6 +333,8 @@
             // 
             // lblFecha
             // 
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
             this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,6 +347,7 @@
             // 
             // lblhora
             // 
+            this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblhora.AutoSize = true;
             this.lblhora.BackColor = System.Drawing.Color.Transparent;
             this.lblhora.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,9 +375,6 @@
             this.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(811, 457);
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(811, 457);
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

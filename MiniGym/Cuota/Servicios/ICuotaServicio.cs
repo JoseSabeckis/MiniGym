@@ -19,6 +19,10 @@ namespace MiniGym.Cuota.Servicios
 
         void VerificarVencimientoDeCuotasYPonerImpagas();
 
+        CuotaDto ObtenerCuotaImpaga(long prestamoId);
+
+        CuotaDto ObtenerProximoVencimiento(long prestamoId);
+
         IEnumerable<CuotaDto> ObtenerCuotasVencidasPorCliente(long prestamoId);
 
         IEnumerable<CuotaDto> ObtenerCuotasVencidasPorClienteDesdeHasta(long prestamoId, DateTime desde, DateTime hasta);

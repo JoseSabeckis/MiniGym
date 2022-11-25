@@ -48,6 +48,7 @@ namespace MiniGym.Prestamo
             grilla.Columns["CodigoCredito"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["CodigoCredito"].HeaderText = @"CodigoCredito";
             grilla.Columns["CodigoCredito"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["CodigoCredito"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Descripcion"].Visible = true;
             grilla.Columns["Descripcion"].Width = 100;

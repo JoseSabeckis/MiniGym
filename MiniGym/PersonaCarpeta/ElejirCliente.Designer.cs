@@ -34,6 +34,7 @@
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtBusqueda);
             this.panel1.Controls.Add(this.label1);
@@ -85,13 +87,23 @@
             // 
             this.dgvGrilla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrilla.Location = new System.Drawing.Point(12, 70);
+            this.dgvGrilla.Location = new System.Drawing.Point(12, 83);
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(668, 310);
+            this.dgvGrilla.Size = new System.Drawing.Size(668, 297);
             this.dgvGrilla.TabIndex = 3;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(291, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "-- DOBLE CLICK EN EL CLIENTE SELECCIONADO--";
             // 
             // ElejirCliente
             // 
@@ -99,6 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(693, 395);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvGrilla);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,6 +128,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -125,5 +139,6 @@
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvGrilla;
+        private System.Windows.Forms.Label label2;
     }
 }

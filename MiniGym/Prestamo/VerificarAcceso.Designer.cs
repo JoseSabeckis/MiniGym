@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlAcceso = new System.Windows.Forms.Panel();
             this.lblAcceso = new System.Windows.Forms.Label();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblVencimiento = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlAcceso.SuspendLayout();
@@ -100,6 +102,8 @@
             // pnlAcceso
             // 
             this.pnlAcceso.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlAcceso.Controls.Add(this.lblVencimiento);
+            this.pnlAcceso.Controls.Add(this.lblCliente);
             this.pnlAcceso.Controls.Add(this.lblAcceso);
             this.pnlAcceso.Location = new System.Drawing.Point(12, 110);
             this.pnlAcceso.Name = "pnlAcceso";
@@ -115,6 +119,26 @@
             this.lblAcceso.Size = new System.Drawing.Size(272, 29);
             this.lblAcceso.TabIndex = 1;
             this.lblAcceso.Text = "-- INGRESE UN DNI --";
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.BackColor = System.Drawing.SystemColors.Info;
+            this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(147, 0);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(24, 31);
+            this.lblCliente.TabIndex = 2;
+            this.lblCliente.Text = "-";
+            // 
+            // lblVencimiento
+            // 
+            this.lblVencimiento.AutoSize = true;
+            this.lblVencimiento.Location = new System.Drawing.Point(187, 82);
+            this.lblVencimiento.Name = "lblVencimiento";
+            this.lblVencimiento.Size = new System.Drawing.Size(20, 16);
+            this.lblVencimiento.TabIndex = 3;
+            this.lblVencimiento.Text = "---";
             // 
             // VerificarAcceso
             // 
@@ -153,5 +177,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlAcceso;
         private System.Windows.Forms.Label lblAcceso;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label lblVencimiento;
     }
 }

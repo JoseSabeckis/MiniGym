@@ -248,6 +248,60 @@ namespace MiniGym.Cuota.Servicios
 
         }
 
+        public CuotaDto ObtenerProximoVencimiento(long prestamoId)
+        {
+
+            using (var contex = new MiniGymModelContainer())
+            {
+
+                var cuotasVencidas = contex.Cuotas.FirstOrDefault(x => x.PrestamoId == prestamoId && x.EstadoCuota == EstadoCuota.Pendiente);
+
+                var cuota = new CuotaDto
+                {
+                    CuotaId = cuotasVencidas.Id,
+                    EstadoCuota = cuotasVencidas.EstadoCuota,
+                    FechaInicio = cuotasVencidas.FechaInicio,
+                    FechaVencimiento = cuotasVencidas.FechaVencimiento,
+                    NumeroCuota = cuotasVencidas.NumeroCuota,
+                    PrestamoId = cuotasVencidas.PrestamoId,
+                    Saldo = cuotasVencidas.Saldo,
+                    ValorCuota = cuotasVencidas.ValorCuota,
+                    ValorParcial = cuotasVencidas.ValorParcial
+                };
+
+                return cuota;
+
+            }
+
+        }
+
+        public CuotaDto ObtenerCuotaImpaga(long prestamoId)
+        {
+
+            using (var contex = new MiniGymModelContainer())
+            {
+
+                var cuotasVencidas = contex.Cuotas.FirstOrDefault(x => x.PrestamoId == prestamoId && x.EstadoCuota == EstadoCuota.Impaga);
+
+                var cuota = new CuotaDto
+                {
+                    CuotaId = cuotasVencidas.Id,
+                    EstadoCuota = cuotasVencidas.EstadoCuota,
+                    FechaInicio = cuotasVencidas.FechaInicio,
+                    FechaVencimiento = cuotasVencidas.FechaVencimiento,
+                    NumeroCuota = cuotasVencidas.NumeroCuota,
+                    PrestamoId = cuotasVencidas.PrestamoId,
+                    Saldo = cuotasVencidas.Saldo,
+                    ValorCuota = cuotasVencidas.ValorCuota,
+                    ValorParcial = cuotasVencidas.ValorParcial
+                };
+
+                return cuota;
+
+            }
+
+        }
+
         public bool VerificarSiLaCuotaEstaPagada(long cuotaId)
         {
 

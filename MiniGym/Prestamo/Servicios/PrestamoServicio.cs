@@ -227,6 +227,35 @@ namespace MiniGym.Prestamo.Servicios
 
         }
 
+        public PrestamoDto ObtenerPrestamoPorClienteDniEnProceso(string ClienteDni)
+        {
+            using (var contex = new MiniGymModelContainer())
+            {
+                var cliente = contex.Personas.FirstOrDefault(x => x.Dni == ClienteDni);
+
+                var aux = contex.Prestamos.FirstOrDefault(x => x.PersonaId == cliente.Id && x.EstadoPrestamo == EstadoPrestamo.EnProceso);
+
+                var prestamo = new PrestamoDto
+                {
+
+                    CantidadCuotas = aux.CantidadCuotas,
+                    CodigoCredito = aux.CodigoCredito,
+                    Notas = aux.Notas,
+                    EstadoPrestamo = aux.EstadoPrestamo,
+                    FechaInicio = aux.FechaInicio,
+                    PrestamoId = aux.Id,
+                    PersonaId = aux.PersonaId,
+                    FechaFin = aux.FechaFin,
+                    Descripcion = aux.Descripcion
+
+                };
+
+                return prestamo;
+
+            }
+
+        }
+
         public IEnumerable<PrestamoDto> ObtenerPrestamosPorClienteDniSinTerminado(string ClienteDni)
         {
             using (var contex = new MiniGymModelContainer())

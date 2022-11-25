@@ -68,13 +68,19 @@ namespace MiniGym.Prestamo
             {
                 pnlAcceso.BackColor = Color.Yellow;
                 lblAcceso.Text = "-- No Se Encontro El Cliente --";
+                lblCliente.Text = "-";
+                lblVencimiento.Text = "-";
 
                 return;
             }
 
+            lblCliente.Text = $"{persona.Apellido} {persona.Nombre}";
+
             if (prestamoServicio.ObtenerPrestamosPorClienteId(persona.Id).Count() == 0)
             {
                 MessageBox.Show("Este Cliente No Tiene Un Plan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblAcceso.Text = "!-- Cree Un Plan! --!";
+                lblVencimiento.Text = "-";
 
                 return;
             }
@@ -84,15 +90,21 @@ namespace MiniGym.Prestamo
                 pnlAcceso.BackColor = Color.Red;
                 lblAcceso.Text = "!-- Tiene Cuotas Impagas --!";
 
-                MessageBox.Show("-- Tiene Cuotas Impagas --", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblVencimiento.Text = $"Vencimiento: {cuotaServicio.ObtenerCuotaImpaga(prestamoServicio.ObtenerPrestamoPorClienteDniEnProceso(persona.Dni).PrestamoId).FechaVencimiento}"; ;
+
+                //MessageBox.Show("-- Tiene Cuotas Impagas --", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 pnlAcceso.BackColor = Color.Green;
                 lblAcceso.Text = "--- Puede Pasar Esta Al Dia ---";
 
-                MessageBox.Show("-- PUEDE PASAR --", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblVencimiento.Text = $"Proximo Vencimiento: {cuotaServicio.ObtenerProximoVencimiento(prestamoServicio.ObtenerPrestamoPorClienteDniEnProceso(persona.Dni).PrestamoId).FechaVencimiento}";
+
+                //MessageBox.Show("-- PUEDE PASAR --", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            txtDni.Focus();
 
         }
 
