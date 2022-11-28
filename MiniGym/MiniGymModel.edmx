@@ -11,6 +11,7 @@
     <EntitySet Name="Personas" EntityType="MiniGymModel.Store.Personas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Prestamos" EntityType="MiniGymModel.Store.Prestamos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Cuotas" EntityType="MiniGymModel.Store.Cuotas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Planes" EntityType="MiniGymModel.Store.Planes" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="ProvinciaLocalidad" Association="MiniGymModel.Store.ProvinciaLocalidad">
       <End Role="Provincia" EntitySet="Provincias" />
       <End Role="Localidad" EntitySet="Localidades" />
@@ -26,6 +27,10 @@
     <AssociationSet Name="PersonaPrestamo" Association="MiniGymModel.Store.PersonaPrestamo">
       <End Role="Persona" EntitySet="Personas" />
       <End Role="Prestamo" EntitySet="Prestamos" />
+    </AssociationSet>
+    <AssociationSet Name="PlanPrestamoSet" Association="MiniGymModel.Store.PlanPrestamoSet">
+      <End Role="Plan" EntitySet="Planes" />
+      <End Role="PrestamoSet" EntitySet="Prestamos" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Localidades">
@@ -76,7 +81,7 @@
     <Property Name="Notas" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EstadoPrestamo" Type="bigint" Nullable="false" />
     <Property Name="PersonaId" Type="bigint" Nullable="false" />
-    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PlanId" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="Cuotas">
     <Key>
@@ -91,6 +96,15 @@
     <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
     <Property Name="Saldo" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="PrestamoId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Planes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="ProvinciaLocalidad">
     <End Role="Provincia" Type="MiniGymModel.Store.Provincias" Multiplicity="1" />
@@ -140,6 +154,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="PlanPrestamoSet">
+    <End Role="Plan" Type="MiniGymModel.Store.Planes" Multiplicity="1" />
+    <End Role="PrestamoSet" Type="MiniGymModel.Store.Prestamos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrestamoSet">
+        <PropertyRef Name="PlanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -165,6 +191,11 @@
           <AssociationSet Name="PersonaPrestamo" Association="MiniGymModel.PersonaPrestamo">
             <End Role="Persona" EntitySet="Personas" />
             <End Role="Prestamo" EntitySet="Prestamos" />
+          </AssociationSet>
+          <EntitySet Name="Planes" EntityType="MiniGymModel.PlanSet" />
+          <AssociationSet Name="PlanPrestamoSet" Association="MiniGymModel.PlanPrestamoSet">
+            <End Role="Plan" EntitySet="Planes" />
+            <End Role="PrestamoSet" EntitySet="Prestamos" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="LocalidadSet">
@@ -246,7 +277,8 @@
           <NavigationProperty Name="Cuota" Relationship="MiniGymModel.PrestamoCuota" FromRole="Prestamo" ToRole="Cuota" />
           <NavigationProperty Name="Persona" Relationship="MiniGymModel.PersonaPrestamo" FromRole="Prestamo" ToRole="Persona" />
           <Property Name="PersonaId" Type="Int64" Nullable="false" />
-          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Plan" Relationship="MiniGymModel.PlanPrestamoSet" FromRole="PrestamoSet" ToRole="Plan" />
+          <Property Name="PlanId" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="CuotaSet">
           <Key>
@@ -295,6 +327,28 @@
             </Principal>
             <Dependent Role="Prestamo">
               <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PlanSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="PrestamoSet" Relationship="MiniGymModel.PlanPrestamoSet" FromRole="Plan" ToRole="PrestamoSet" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="PlanPrestamoSet">
+          <End Type="MiniGymModel.PlanSet" Role="Plan" Multiplicity="1" />
+          <End Type="MiniGymModel.PrestamoSet" Role="PrestamoSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plan">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrestamoSet">
+              <PropertyRef Name="PlanId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -354,7 +408,7 @@
           <ScalarProperty Name="Notas" ColumnName="Notas" />
           <ScalarProperty Name="EstadoPrestamo" ColumnName="EstadoPrestamo" />
           <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="PlanId" ColumnName="PlanId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -370,6 +424,16 @@
           <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
           <ScalarProperty Name="Saldo" ColumnName="Saldo" />
           <ScalarProperty Name="PrestamoId" ColumnName="PrestamoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planes">
+      <EntityTypeMapping TypeName="IsTypeOf(MiniGymModel.PlanSet)">
+        <MappingFragment StoreEntitySet="Planes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

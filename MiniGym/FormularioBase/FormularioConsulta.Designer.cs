@@ -60,7 +60,7 @@
             this.btnSalir});
             this.menuAccesoRapido.Location = new System.Drawing.Point(0, 0);
             this.menuAccesoRapido.Name = "menuAccesoRapido";
-            this.menuAccesoRapido.Size = new System.Drawing.Size(1099, 39);
+            this.menuAccesoRapido.Size = new System.Drawing.Size(894, 39);
             this.menuAccesoRapido.TabIndex = 6;
             this.menuAccesoRapido.Text = "toolStrip1";
             // 
@@ -138,7 +138,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(1099, 536);
+            this.dgvGrilla.Size = new System.Drawing.Size(894, 536);
             this.dgvGrilla.TabIndex = 7;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter_1);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick_1);
@@ -146,6 +146,7 @@
             // pnlBusqueda
             // 
             this.pnlBusqueda.BackColor = System.Drawing.Color.SpringGreen;
+            this.pnlBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBusqueda.Controls.Add(this.btnBuscar);
             this.pnlBusqueda.Controls.Add(this.imgBuscar);
             this.pnlBusqueda.Controls.Add(this.lblBusqueda);
@@ -155,7 +156,7 @@
             this.pnlBusqueda.Location = new System.Drawing.Point(0, 520);
             this.pnlBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBusqueda.Name = "pnlBusqueda";
-            this.pnlBusqueda.Size = new System.Drawing.Size(1099, 55);
+            this.pnlBusqueda.Size = new System.Drawing.Size(894, 55);
             this.pnlBusqueda.TabIndex = 8;
             // 
             // btnBuscar
@@ -168,10 +169,10 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(990, 0);
+            this.btnBuscar.Location = new System.Drawing.Point(748, 0);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(109, 55);
+            this.btnBuscar.Size = new System.Drawing.Size(142, 51);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -179,12 +180,13 @@
             // 
             // imgBuscar
             // 
+            this.imgBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgBuscar.Dock = System.Windows.Forms.DockStyle.Left;
             this.imgBuscar.Image = global::MiniGym.Properties.Resources.BuscarDos;
             this.imgBuscar.Location = new System.Drawing.Point(0, 0);
             this.imgBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.imgBuscar.Name = "imgBuscar";
-            this.imgBuscar.Size = new System.Drawing.Size(56, 55);
+            this.imgBuscar.Size = new System.Drawing.Size(56, 51);
             this.imgBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBuscar.TabIndex = 3;
             this.imgBuscar.TabStop = false;
@@ -194,21 +196,23 @@
             this.lblBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.lblBusqueda.Location = new System.Drawing.Point(59, 17);
+            this.lblBusqueda.Location = new System.Drawing.Point(64, 18);
             this.lblBusqueda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(61, 15);
+            this.lblBusqueda.Size = new System.Drawing.Size(66, 16);
             this.lblBusqueda.TabIndex = 2;
             this.lblBusqueda.Text = "Busqueda";
             // 
             // txtBuscar
             // 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscar.Location = new System.Drawing.Point(144, 15);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(764, 21);
+            this.txtBuscar.Size = new System.Drawing.Size(585, 21);
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -216,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1099, 575);
+            this.ClientSize = new System.Drawing.Size(894, 575);
             this.Controls.Add(this.pnlBusqueda);
             this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.menuAccesoRapido);

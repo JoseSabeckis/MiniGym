@@ -10,8 +10,6 @@ namespace MiniGym.Prestamo.Servicios
     {
         public long PrestamoId { get; set; }
 
-        public string Descripcion { get; set; }
-
         public string CodigoCredito { get; set; }
 
         public DateTime FechaInicio { get; set; }
@@ -25,5 +23,7 @@ namespace MiniGym.Prestamo.Servicios
         public long PersonaId { get; set; }
 
         public EstadoPrestamo EstadoPrestamo { get; set; }
+
+        public long PlanId { get; set; }
     }
 }

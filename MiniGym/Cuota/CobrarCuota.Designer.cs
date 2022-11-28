@@ -64,6 +64,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblPlan = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gpbFacturas.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblPlan);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Controls.Add(this.lblFinal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -463,6 +465,16 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Cant. Cuotas:";
             // 
+            // lblPlan
+            // 
+            this.lblPlan.AutoSize = true;
+            this.lblPlan.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPlan.Location = new System.Drawing.Point(5, 4);
+            this.lblPlan.Name = "lblPlan";
+            this.lblPlan.Size = new System.Drawing.Size(43, 20);
+            this.lblPlan.TabIndex = 11;
+            this.lblPlan.Text = "Plan:";
+            // 
             // CobrarCuota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -534,5 +546,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnNotas;
+        private System.Windows.Forms.Label lblPlan;
     }
 }

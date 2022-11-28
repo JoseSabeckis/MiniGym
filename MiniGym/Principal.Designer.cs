@@ -60,6 +60,9 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.planToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoPlanToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPlanesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,7 +77,8 @@
             this.sistemaToolStripMenuItem,
             this.configuracionToolStripMenuItem,
             this.planesToolStripMenuItem,
-            this.morososToolStripMenuItem});
+            this.morososToolStripMenuItem,
+            this.planToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(795, 24);
@@ -187,14 +191,14 @@
             // verPlanesToolStripMenuItem
             // 
             this.verPlanesToolStripMenuItem.Name = "verPlanesToolStripMenuItem";
-            this.verPlanesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.verPlanesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verPlanesToolStripMenuItem.Text = "Ver Planes";
             this.verPlanesToolStripMenuItem.Click += new System.EventHandler(this.verPlanesToolStripMenuItem_Click);
             // 
             // nuevoPlanToolStripMenuItem
             // 
             this.nuevoPlanToolStripMenuItem.Name = "nuevoPlanToolStripMenuItem";
-            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoPlanToolStripMenuItem.Text = "Nuevo Plan";
             this.nuevoPlanToolStripMenuItem.Click += new System.EventHandler(this.nuevoPlanToolStripMenuItem_Click);
             // 
@@ -363,6 +367,29 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // planToolStripMenuItem
+            // 
+            this.planToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoPlanToolStripMenuItem1,
+            this.verPlanesToolStripMenuItem1});
+            this.planToolStripMenuItem.Name = "planToolStripMenuItem";
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.planToolStripMenuItem.Text = "Categoria";
+            // 
+            // nuevoPlanToolStripMenuItem1
+            // 
+            this.nuevoPlanToolStripMenuItem1.Name = "nuevoPlanToolStripMenuItem1";
+            this.nuevoPlanToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.nuevoPlanToolStripMenuItem1.Text = "Ver Categorias";
+            this.nuevoPlanToolStripMenuItem1.Click += new System.EventHandler(this.nuevoPlanToolStripMenuItem1_Click);
+            // 
+            // verPlanesToolStripMenuItem1
+            // 
+            this.verPlanesToolStripMenuItem1.Name = "verPlanesToolStripMenuItem1";
+            this.verPlanesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.verPlanesToolStripMenuItem1.Text = "Nueva Categoria";
+            this.verPlanesToolStripMenuItem1.Click += new System.EventHandler(this.verPlanesToolStripMenuItem1_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -423,6 +450,9 @@
         private System.Windows.Forms.Button btnVerClientes;
         private System.Windows.Forms.Button btnNuevoCliente;
         private System.Windows.Forms.Button btnAcceso;
+        private System.Windows.Forms.ToolStripMenuItem planToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoPlanToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem verPlanesToolStripMenuItem1;
     }
 }
 

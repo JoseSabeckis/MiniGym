@@ -154,6 +154,24 @@
     <Compile Include="PersonaCarpeta\Servicios\IPersonaServicio.cs" />
     <Compile Include="PersonaCarpeta\Servicios\PersonaDto.cs" />
     <Compile Include="PersonaCarpeta\Servicios\PersonaServicio.cs" />
+    <Compile Include="PlanSet.cs">
+      <DependentUpon>MiniGymModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Plan\Plan_ABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan\Plan_ABM.Designer.cs">
+      <DependentUpon>Plan_ABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plan\Plan_Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan\Plan_Consulta.Designer.cs">
+      <DependentUpon>Plan_Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plan\Servicios\IPlanServicio.cs" />
+    <Compile Include="Plan\Servicios\PlanDto.cs" />
+    <Compile Include="Plan\Servicios\PlanServicio.cs" />
     <Compile Include="PrestamoSet.cs">
       <DependentUpon>MiniGymModel.tt</DependentUpon>
     </Compile>
@@ -248,6 +266,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PersonaCarpeta\PersonaConsulta.resx">
       <DependentUpon>PersonaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan\Plan_ABM.resx">
+      <DependentUpon>Plan_ABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan\Plan_Consulta.resx">
+      <DependentUpon>Plan_Consulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prestamo\AumentoCuota.resx">
       <DependentUpon>AumentoCuota.cs</DependentUpon>

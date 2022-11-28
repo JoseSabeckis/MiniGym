@@ -2,6 +2,7 @@
 using MiniGym.Helpers;
 using MiniGym.Localidad.Servicios;
 using MiniGym.PersonaCarpeta.Servicios;
+using MiniGym.Plan.Servicios;
 using MiniGym.Prestamo;
 using MiniGym.Prestamo.Servicios;
 using System;
@@ -26,6 +27,7 @@ namespace MiniGym.Cuota
         Servicios.ICuotaServicio cuotaServicio;
         IPersonaServicio clienteServicio;
         IPrestamoServicio prestamoServicio;
+        IPlanServicio planServicio;
 
         ILocalidadServicio localidadServicio;
 
@@ -38,7 +40,7 @@ namespace MiniGym.Cuota
             cuotaServicio = new Servicios.CuotaServicio();
             clienteServicio = new PersonaServicio();
             prestamoServicio = new PrestamoServicio();
-
+            planServicio = new PlanServicio();
             localidadServicio = new LocalidadServicio();
 
             _ComprobanteId = idComprobante;
@@ -48,6 +50,8 @@ namespace MiniGym.Cuota
             CalcularTotalesHistorial();
             VerificarSiEstaTodoPagado();
             cuotaServicio.VerificarVencimientoDeCuotasYPonerImpagas();
+
+            lblPlan.Text = "Plan: " + planServicio.ObtenerPorId(_ComprobanteId).Descripcion;
         }
 
         private void VerificarSiEstaTodoPagado()

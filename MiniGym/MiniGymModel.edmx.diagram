@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d5a5de2dabf242d7ad3d4b7241875114" Name="Diagram1" >
-        <EntityTypeShape EntityType="MiniGymModel.LocalidadSet" Width="1.5" PointX="2.75" PointY="0.5" />
-        <EntityTypeShape EntityType="MiniGymModel.ProvinciaSet" Width="1.5" PointX="0.5" PointY="0.625" />
+        <EntityTypeShape EntityType="MiniGymModel.LocalidadSet" Width="1.5" PointX="2.75" PointY="0.5" FillColor="Gray" />
+        <EntityTypeShape EntityType="MiniGymModel.ProvinciaSet" Width="1.5" PointX="0.5" PointY="0.625" FillColor="Gray" />
         <AssociationConnector Association="MiniGymModel.ProvinciaLocalidad" />
         <EntityTypeShape EntityType="MiniGymModel.Persona" Width="1.5" PointX="5.125" PointY="0.5" FillColor="Blue" />
         <AssociationConnector Association="MiniGymModel.LocalidadPersona" />
@@ -14,6 +14,8 @@
         <EntityTypeShape EntityType="MiniGymModel.CuotaSet" Width="1.5" PointX="10.625" PointY="0.75" FillColor="0, 192, 0" />
         <AssociationConnector Association="MiniGymModel.PrestamoCuota" />
         <AssociationConnector Association="MiniGymModel.PersonaPrestamo" />
+        <EntityTypeShape EntityType="MiniGymModel.PlanSet" Width="1.5" PointX="8.375" PointY="4.5" FillColor="Lime" />
+        <AssociationConnector Association="MiniGymModel.PlanPrestamoSet" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,4 +1,6 @@
 ﻿using MiniGym.Cuota.Servicios;
+using MiniGym.Helpers;
+using MiniGym.Plan;
 using MiniGym.Prestamo;
 using System;
 using System.Collections.Generic;
@@ -131,6 +133,18 @@ namespace MiniGym
         {
             var acceso = new VerificarAcceso();
             acceso.ShowDialog();
+        }
+
+        private void nuevoPlanToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var planes = new Plan_Consulta();
+            planes.ShowDialog();
+        }
+
+        private void verPlanesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var plan = new Plan_ABM(TipoOperacion.Nuevo);
+            plan.ShowDialog();           
         }
     }
 }

@@ -2,6 +2,7 @@
 using MiniGym.FormularioBase;
 using MiniGym.Helpers;
 using MiniGym.PersonaCarpeta.Servicios;
+using MiniGym.Plan.Servicios;
 using MiniGym.Prestamo.Servicios;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,10 @@ namespace MiniGym.Prestamo
     {
         IPrestamoServicio prestamoServico;
         IPersonaServicio _clienteServicio;
-        MiniGym.Cuota.Servicios.ICuotaServicio _CuotaServicio;
+        ICuotaServicio _CuotaServicio;
+        IPlanServicio _PlanServicio;
+
+        bool bandera = false;
 
         public NuevoPlanCuota(TipoOperacion tipoOperacion, long? entidadId = null)
             : base(tipoOperacion, entidadId)
@@ -28,9 +32,18 @@ namespace MiniGym.Prestamo
 
             prestamoServico = new PrestamoServicio();
             _clienteServicio = new PersonaServicio();
-            _CuotaServicio = new MiniGym.Cuota.Servicios.CuotaServicio();
+            _CuotaServicio = new CuotaServicio();
+            _PlanServicio = new PlanServicio();
 
             btnLimpiar.Visible = false;
+
+            CargarComboBox(cmbPlan, _PlanServicio.Obtener(string.Empty), "Descripcion", "Id");
+
+            if (_PlanServicio.Obtener(string.Empty) == null)
+            {
+                lblCategoria.Visible = true;
+                bandera = true;
+            }
         }
 
         public void TraerCodigoCredito()
@@ -48,7 +61,6 @@ namespace MiniGym.Prestamo
             TraerCodigoCredito();
 
             lblfecha.Text = $"{DateTime.Now.ToShortDateString()}";
-            txtDescripcion.Text = $"{DateTime.Now.Year}";
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -70,6 +82,11 @@ namespace MiniGym.Prestamo
 
         public override bool EjecutarComandoNuevo()
         {
+            if (bandera)
+            {
+                MessageBox.Show("Cree una Categoria para el Plan 1", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return false;
+            }
 
             if (string.IsNullOrEmpty(txtBusquedaCliente.Text))
             {
@@ -77,15 +94,15 @@ namespace MiniGym.Prestamo
                 return false;
             }
 
-            if (string.IsNullOrEmpty(txtDescripcion.Text))
-            {
-                MessageBox.Show("Agregue una Descripcion", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
             if (nudValorCuota.Value <= 0)
             {
                 MessageBox.Show("No Ingreso Ningun Monto A Cobrar", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (nudNumeroCuotas.Value <= 0)
+            {
+                MessageBox.Show("El Numero De Cuotas Tiene Que Ser Mayor a Cero", "error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return false;
             }
 
@@ -100,13 +117,13 @@ namespace MiniGym.Prestamo
 
             var nuevoPrestamo = new PrestamoDto
             {
-                CantidadCuotas = 12,
+                CantidadCuotas = (int)nudNumeroCuotas.Value,
                 CodigoCredito = txtCredito.Text,
                 EstadoPrestamo = EstadoPrestamo.EnProceso,
                 FechaInicio = DateTime.Now,
                 Notas = txtNotas.Text,
                 PersonaId = idpersona,
-                Descripcion = txtDescripcion.Text
+                PlanId = ((PlanDto)cmbPlan.SelectedItem).Id,
 
             };
 
@@ -116,7 +133,7 @@ namespace MiniGym.Prestamo
 
             var idprestamo = prestamoServico.TrerIdDelPrestamoPorFechaIinicio(nuevoPrestamo.FechaInicio);
 
-            var cuota = new MiniGym.Cuota.Servicios.CuotaDto
+            var cuota = new CuotaDto
             {
                 ValorCuota = Math.Round(valorCuotas, 2),
                 Saldo = valorCuotas,
@@ -125,8 +142,7 @@ namespace MiniGym.Prestamo
 
             _CuotaServicio.CargarCuotas(12, cuota, dtpFechaPrestamo.Value);//creacion de las cuotas
 
-            nudValorCuota.Value = 0;
-            txtDescripcion.Text = $"{DateTime.Now.Year}";
+            nudNumeroCuotas.Value = 12;
             txtNotas.Text = "";
             TraerCodigoCredito();
 
@@ -136,15 +152,15 @@ namespace MiniGym.Prestamo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtBusquedaCliente.Text))
+            if (bandera)
             {
-                MessageBox.Show("No Hay Ningun Cliente Seleccionado Por Favor Cargue Uno", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cree una Categoria para el Plan 2", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            if (string.IsNullOrEmpty(txtBusquedaCliente.Text))
             {
-                MessageBox.Show("Agregue una Descripcion", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No Hay Ningun Cliente Seleccionado Por Favor Cargue Uno", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -171,8 +187,8 @@ namespace MiniGym.Prestamo
                 FechaInicio = DateTime.Now,
                 Notas = txtNotas.Text,
                 PersonaId = idpersona,
-                Descripcion = txtDescripcion.Text
-                
+                PlanId = ((PlanDto)cmbPlan.SelectedItem).Id,
+
             };
 
             decimal valorCuotas = nudValorCuota.Value;
@@ -181,7 +197,7 @@ namespace MiniGym.Prestamo
 
             var idprestamo = prestamoServico.TrerIdDelPrestamoPorFechaIinicio(nuevoPrestamo.FechaInicio);
 
-            var cuota = new MiniGym.Cuota.Servicios.CuotaDto
+            var cuota = new CuotaDto
             {
                 ValorCuota = Math.Round(valorCuotas, 2),
                 Saldo = valorCuotas,
@@ -194,8 +210,7 @@ namespace MiniGym.Prestamo
 
             MessageBox.Show($"-----------------------------------------------------\nFelicidades Acabas De Realizar Un Nuevo Plan -----------------------------------------------------", "Plan Realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            nudValorCuota.Value = 0;
-            txtDescripcion.Text = $"{DateTime.Now.Year}";
+            nudNumeroCuotas.Value = 12;
             txtNotas.Text = "";
             TraerCodigoCredito();
         }

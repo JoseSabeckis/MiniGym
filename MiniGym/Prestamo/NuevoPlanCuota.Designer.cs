@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPlanCuota));
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFechaPrestamo = new System.Windows.Forms.DateTimePicker();
@@ -43,21 +44,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.cmbPlan = new System.Windows.Forms.ComboBox();
+            this.nudNumeroCuotas = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nudValorCuota = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumeroCuotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValorCuota)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +69,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Info;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.panel1);
             this.panel5.Controls.Add(this.txtDni);
             this.panel5.Controls.Add(this.lblEmpresa);
@@ -77,16 +82,26 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 39);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(878, 123);
+            this.panel5.Size = new System.Drawing.Size(921, 123);
             this.panel5.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(427, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 19);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "DNI";
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dtpFechaPrestamo);
             this.panel1.Controls.Add(this.lblfecha);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(714, 0);
+            this.panel1.Location = new System.Drawing.Point(757, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(160, 119);
             this.panel1.TabIndex = 21;
@@ -120,7 +135,7 @@
             // txtDni
             // 
             this.txtDni.Enabled = false;
-            this.txtDni.Location = new System.Drawing.Point(407, 20);
+            this.txtDni.Location = new System.Drawing.Point(467, 20);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(139, 25);
             this.txtDni.TabIndex = 19;
@@ -136,6 +151,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::MiniGym.Properties.Resources.notepad_78910;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -154,11 +170,13 @@
             // 
             // btnBuscarCliente
             // 
+            this.btnBuscarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarCliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(393, 63);
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCliente.Location = new System.Drawing.Point(570, 61);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(162, 33);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(168, 45);
             this.btnBuscarCliente.TabIndex = 3;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
@@ -166,10 +184,12 @@
             // 
             // txtBusquedaCliente
             // 
+            this.txtBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBusquedaCliente.Enabled = false;
             this.txtBusquedaCliente.Location = new System.Drawing.Point(204, 71);
             this.txtBusquedaCliente.Name = "txtBusquedaCliente";
-            this.txtBusquedaCliente.Size = new System.Drawing.Size(181, 25);
+            this.txtBusquedaCliente.Size = new System.Drawing.Size(257, 25);
             this.txtBusquedaCliente.TabIndex = 2;
             // 
             // label2
@@ -194,30 +214,20 @@
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Info;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.label13);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 162);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(878, 154);
+            this.panel6.Size = new System.Drawing.Size(921, 154);
             this.panel6.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(216, 19);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Se Creara un Plan Año Calendario";
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel8.Controls.Add(this.txtNotas);
-            this.panel8.Location = new System.Drawing.Point(69, 53);
+            this.panel8.Location = new System.Drawing.Point(69, 20);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(558, 94);
             this.panel8.TabIndex = 6;
@@ -236,33 +246,73 @@
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.txtDescripcion);
+            this.panel7.Controls.Add(this.lblCategoria);
+            this.panel7.Controls.Add(this.cmbPlan);
+            this.panel7.Controls.Add(this.nudNumeroCuotas);
+            this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.nudValorCuota);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(633, 0);
+            this.panel7.Location = new System.Drawing.Point(650, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(241, 150);
+            this.panel7.Size = new System.Drawing.Size(267, 150);
             this.panel7.TabIndex = 5;
             // 
-            // txtDescripcion
+            // cmbPlan
             // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(122, 80);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(112, 25);
-            this.txtDescripcion.TabIndex = 9;
+            this.cmbPlan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPlan.FormattingEnabled = true;
+            this.cmbPlan.Location = new System.Drawing.Point(59, 102);
+            this.cmbPlan.Name = "cmbPlan";
+            this.cmbPlan.Size = new System.Drawing.Size(175, 27);
+            this.cmbPlan.TabIndex = 20;
+            // 
+            // nudNumeroCuotas
+            // 
+            this.nudNumeroCuotas.BackColor = System.Drawing.SystemColors.Info;
+            this.nudNumeroCuotas.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudNumeroCuotas.Location = new System.Drawing.Point(122, 10);
+            this.nudNumeroCuotas.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.nudNumeroCuotas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudNumeroCuotas.Name = "nudNumeroCuotas";
+            this.nudNumeroCuotas.Size = new System.Drawing.Size(52, 27);
+            this.nudNumeroCuotas.TabIndex = 19;
+            this.nudNumeroCuotas.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 19);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Cant Cuotas:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 83);
+            this.label5.Location = new System.Drawing.Point(11, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 19);
+            this.label5.Size = new System.Drawing.Size(42, 19);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Descripcion:";
+            this.label5.Text = "Plan:";
             // 
             // nudValorCuota
             // 
@@ -272,7 +322,7 @@
             0,
             0,
             0});
-            this.nudValorCuota.Location = new System.Drawing.Point(122, 13);
+            this.nudValorCuota.Location = new System.Drawing.Point(122, 56);
             this.nudValorCuota.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -287,7 +337,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(9, 15);
+            this.label12.Location = new System.Drawing.Point(10, 64);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(92, 19);
             this.label12.TabIndex = 0;
@@ -296,27 +346,37 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(10, 53);
+            this.label13.Location = new System.Drawing.Point(10, 20);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 19);
             this.label13.TabIndex = 1;
             this.label13.Text = "Notas:";
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.Red;
+            this.lblCategoria.Location = new System.Drawing.Point(54, 129);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(180, 17);
+            this.lblCategoria.TabIndex = 21;
+            this.lblCategoria.Text = "--- CREE UNA CATEGORIA ---";
+            this.lblCategoria.Visible = false;
             // 
             // NuevoPlanCuota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(878, 316);
+            this.ClientSize = new System.Drawing.Size(921, 316);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(894, 355);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(894, 355);
             this.Name = "NuevoPlanCuota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Plan Cuota";
@@ -334,6 +394,7 @@
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumeroCuotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValorCuota)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -362,8 +423,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown nudNumeroCuotas;
+        private System.Windows.Forms.ComboBox cmbPlan;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblCategoria;
     }
 }

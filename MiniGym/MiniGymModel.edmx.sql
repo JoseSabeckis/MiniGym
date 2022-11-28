@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/04/2020 00:26:03
+-- Date Created: 11/28/2022 17:35:09
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\MiniGym\MiniGym\MiniGymModel.edmx
 -- --------------------------------------------------
 
@@ -29,6 +29,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_PersonaPrestamo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Prestamos] DROP CONSTRAINT [FK_PersonaPrestamo];
 GO
+IF OBJECT_ID(N'[dbo].[FK_PlanPrestamoSet]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Prestamos] DROP CONSTRAINT [FK_PlanPrestamoSet];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -48,6 +51,9 @@ IF OBJECT_ID(N'[dbo].[Prestamos]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Cuotas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Cuotas];
+GO
+IF OBJECT_ID(N'[dbo].[Planes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Planes];
 GO
 
 -- --------------------------------------------------
@@ -100,7 +106,7 @@ CREATE TABLE [dbo].[Prestamos] (
     [Notas] nvarchar(max)  NOT NULL,
     [EstadoPrestamo] bigint  NOT NULL,
     [PersonaId] bigint  NOT NULL,
-    [Descripcion] nvarchar(max)  NOT NULL
+    [PlanId] bigint  NOT NULL
 );
 GO
 
@@ -115,6 +121,15 @@ CREATE TABLE [dbo].[Cuotas] (
     [FechaVencimiento] datetime  NOT NULL,
     [Saldo] decimal(18,0)  NOT NULL,
     [PrestamoId] bigint  NOT NULL
+);
+GO
+
+-- Creating table 'Planes'
+CREATE TABLE [dbo].[Planes] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [Precio] decimal(18,0)  NOT NULL,
+    [EstaEliminado] bit  NOT NULL
 );
 GO
 
@@ -149,6 +164,12 @@ GO
 -- Creating primary key on [Id] in table 'Cuotas'
 ALTER TABLE [dbo].[Cuotas]
 ADD CONSTRAINT [PK_Cuotas]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Planes'
+ALTER TABLE [dbo].[Planes]
+ADD CONSTRAINT [PK_Planes]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -214,6 +235,21 @@ GO
 CREATE INDEX [IX_FK_PersonaPrestamo]
 ON [dbo].[Prestamos]
     ([PersonaId]);
+GO
+
+-- Creating foreign key on [PlanId] in table 'Prestamos'
+ALTER TABLE [dbo].[Prestamos]
+ADD CONSTRAINT [FK_PlanPrestamoSet]
+    FOREIGN KEY ([PlanId])
+    REFERENCES [dbo].[Planes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PlanPrestamoSet'
+CREATE INDEX [IX_FK_PlanPrestamoSet]
+ON [dbo].[Prestamos]
+    ([PlanId]);
 GO
 
 -- --------------------------------------------------

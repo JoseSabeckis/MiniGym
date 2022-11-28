@@ -114,13 +114,6 @@ namespace MiniGym.LocalidadCarpeta
                     MessageBoxIcon.Error);
                 return false;
             }
-            /*
-            if(string.IsNullOrEmpty(cmbZona.Text))
-            {
-                MessageBox.Show(@"Por favor ingrese una Zona.", @"Atención", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return false;
-            }*/
 
             var localidadParaModificar = new LocalidadDto
             {
@@ -131,10 +124,6 @@ namespace MiniGym.LocalidadCarpeta
             };
 
             _localidadServicio.Modificar(localidadParaModificar);
-            /*
-            CargarComboBox(cmbZona,
-                    _localidadServicio.ObtenerPorProvincia(((ProvinciaDto)cmbProvincia.SelectedItem).Id, string.Empty),
-                    "Descripcion", "Id");*/
 
             return true;
         }

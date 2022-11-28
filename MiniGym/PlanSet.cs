@@ -12,27 +12,20 @@ namespace MiniGym
     using System;
     using System.Collections.Generic;
     
-    public partial class PrestamoSet
+    public partial class PlanSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PrestamoSet()
+        public PlanSet()
         {
-            this.Cuota = new HashSet<CuotaSet>();
+            this.PrestamoSet = new HashSet<PrestamoSet>();
         }
     
         public long Id { get; set; }
-        public string CodigoCredito { get; set; }
-        public System.DateTime FechaInicio { get; set; }
-        public Nullable<System.DateTime> FechaFin { get; set; }
-        public int CantidadCuotas { get; set; }
-        public string Notas { get; set; }
-        public EstadoPrestamo EstadoPrestamo { get; set; }
-        public long PersonaId { get; set; }
-        public long PlanId { get; set; }
+        public string Descripcion { get; set; }
+        public decimal Precio { get; set; }
+        public bool EstaEliminado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CuotaSet> Cuota { get; set; }
-        public virtual Persona Persona { get; set; }
-        public virtual PlanSet Plan { get; set; }
+        public virtual ICollection<PrestamoSet> PrestamoSet { get; set; }
     }
 }

@@ -45,7 +45,7 @@ namespace MiniGym.Prestamo.Servicios
                     FechaInicio = prestamo.FechaInicio,
                     Notas = prestamo.Notas,
                     PersonaId = prestamo.PersonaId,
-                    Descripcion = prestamo.Descripcion
+                    PlanId = prestamo.PlanId
                 };
 
                 contex.Prestamos.Add(prestamoNuevo);
@@ -99,7 +99,7 @@ namespace MiniGym.Prestamo.Servicios
                     PrestamoId = x.Id,
                     PersonaId = x.PersonaId,
                     FechaFin = x.FechaFin,
-                    Descripcion = x.Descripcion
+                    PlanId = x.PlanId
 
                 }).ToList();
 
@@ -138,7 +138,7 @@ namespace MiniGym.Prestamo.Servicios
                     PrestamoId = x.Id,
                     PersonaId = x.PersonaId,
                     FechaFin = x.FechaFin,
-                    Descripcion = x.Descripcion
+                    PlanId = x.PlanId
 
                 }).ToList();
 
@@ -164,7 +164,7 @@ namespace MiniGym.Prestamo.Servicios
                     PrestamoId = x.Id,
                     PersonaId = x.PersonaId,
                     FechaFin = x.FechaFin,
-                    Descripcion = x.Descripcion
+                    PlanId = x.PlanId
 
                 }).ToList();
 
@@ -190,7 +190,7 @@ namespace MiniGym.Prestamo.Servicios
                     PrestamoId = x.Id,
                     PersonaId = x.PersonaId,
                     FechaFin = x.FechaFin,
-                    Descripcion = x.Descripcion
+                    PlanId = x.PlanId
 
                 }).ToList();
 
@@ -217,7 +217,7 @@ namespace MiniGym.Prestamo.Servicios
                     PrestamoId = x.Id,
                     PersonaId = x.PersonaId,
                     FechaFin = x.FechaFin,
-                    Descripcion = x.Descripcion
+                    PlanId = x.PlanId
 
                 }).ToList();
 
@@ -246,7 +246,7 @@ namespace MiniGym.Prestamo.Servicios
                     PrestamoId = aux.Id,
                     PersonaId = aux.PersonaId,
                     FechaFin = aux.FechaFin,
-                    Descripcion = aux.Descripcion
+                    PlanId = aux.PlanId
 
                 };
 
@@ -273,7 +273,7 @@ namespace MiniGym.Prestamo.Servicios
                     PrestamoId = x.Id,
                     PersonaId = x.PersonaId,
                     FechaFin = x.FechaFin,
-                    Descripcion = x.Descripcion
+                    PlanId = x.PlanId
 
                 }).ToList();
 
@@ -356,7 +356,7 @@ namespace MiniGym.Prestamo.Servicios
                         Notas = x.Notas,
                         PersonaId = x.PersonaId,
                         PrestamoId = x.Id,
-                        Descripcion = x.Descripcion
+                        PlanId = x.PlanId
 
                     });
 
@@ -531,7 +531,7 @@ namespace MiniGym.Prestamo.Servicios
                         Notas = x.Notas,
                         PersonaId = x.PersonaId,
                         PrestamoId = x.Id,
-                        Descripcion = x.Descripcion
+                        PlanId = x.PlanId
 
                     });
 

@@ -50,12 +50,6 @@ namespace MiniGym.Prestamo
             grilla.Columns["CodigoCredito"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["CodigoCredito"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["Descripcion"].Visible = true;
-            grilla.Columns["Descripcion"].Width = 100;
-            grilla.Columns["Descripcion"].HeaderText = @"Titulo";
-            grilla.Columns["Descripcion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Descripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             grilla.Columns["FechaInicio"].Visible = true;
             grilla.Columns["FechaInicio"].Width = 100;
             grilla.Columns["FechaInicio"].HeaderText = @"FechaInicio";

@@ -30,5 +30,6 @@ namespace MiniGym
         public virtual DbSet<Persona> Personas { get; set; }
         public virtual DbSet<PrestamoSet> Prestamos { get; set; }
         public virtual DbSet<CuotaSet> Cuotas { get; set; }
+        public virtual DbSet<PlanSet> Planes { get; set; }
     }
 }
