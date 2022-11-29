@@ -18,7 +18,7 @@ namespace MiniGym.Prestamo
     {
         private readonly IPersonaServicio _clienteServicio;
         private readonly IPrestamoServicio _prestamoServicio;
-        private readonly MiniGym.Cuota.Servicios.ICuotaServicio _cuotaServicio;
+        private readonly ICuotaServicio _cuotaServicio;
         protected long EntidadId;
         protected object EntidadSeleccionada;
         long PersonaId;
@@ -32,7 +32,7 @@ namespace MiniGym.Prestamo
 
             _clienteServicio = new PersonaServicio();
             _prestamoServicio = new PrestamoServicio();
-            _cuotaServicio = new MiniGym.Cuota.Servicios.CuotaServicio();
+            _cuotaServicio = new CuotaServicio();
             IdComprobanteSeleccionado = 0;
 
         }
@@ -46,13 +46,13 @@ namespace MiniGym.Prestamo
 
             grilla.Columns["CodigoCredito"].Visible = true;
             grilla.Columns["CodigoCredito"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["CodigoCredito"].HeaderText = @"CodigoCredito";
+            grilla.Columns["CodigoCredito"].HeaderText = @"Codigo";
             grilla.Columns["CodigoCredito"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["CodigoCredito"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["FechaInicio"].Visible = true;
             grilla.Columns["FechaInicio"].Width = 100;
-            grilla.Columns["FechaInicio"].HeaderText = @"FechaInicio";
+            grilla.Columns["FechaInicio"].HeaderText = @"Fecha de Inicio";
             grilla.Columns["FechaInicio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["FechaInicio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 

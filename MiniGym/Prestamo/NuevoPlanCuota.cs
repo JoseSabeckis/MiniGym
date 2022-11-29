@@ -39,7 +39,7 @@ namespace MiniGym.Prestamo
 
             CargarComboBox(cmbPlan, _PlanServicio.Obtener(string.Empty), "Descripcion", "Id");
 
-            if (_PlanServicio.Obtener(string.Empty) == null)
+            if (_PlanServicio.Obtener(string.Empty).Count() == 0)
             {
                 lblCategoria.Visible = true;
                 bandera = true;
@@ -140,7 +140,7 @@ namespace MiniGym.Prestamo
                 PrestamoId = idprestamo
             };
 
-            _CuotaServicio.CargarCuotas(12, cuota, dtpFechaPrestamo.Value);//creacion de las cuotas
+            _CuotaServicio.CargarCuotas((int)nudNumeroCuotas.Value, cuota, dtpFechaPrestamo.Value);//creacion de las cuotas
 
             nudNumeroCuotas.Value = 12;
             txtNotas.Text = "";
@@ -204,7 +204,7 @@ namespace MiniGym.Prestamo
                 PrestamoId = idprestamo
             };
 
-            _CuotaServicio.CargarCuotas(12, cuota, dtpFechaPrestamo.Value);//creacion de las cuotas
+            _CuotaServicio.CargarCuotas((int)nudNumeroCuotas.Value, cuota, dtpFechaPrestamo.Value);//creacion de las cuotas
 
 
 
@@ -218,6 +218,11 @@ namespace MiniGym.Prestamo
         private void nudValorCuota_ValueChanged(object sender, EventArgs e)
         {
             TraerCodigoCredito();
+        }
+
+        private void cmbPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudValorCuota.Value = ((PlanDto)cmbPlan.SelectedItem).Precio;
         }
     }
 }

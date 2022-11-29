@@ -21,6 +21,8 @@ namespace MiniGym.Plan
         {
             InitializeComponent();
 
+            planServicio = new PlanServicio();
+
             if (tipoOperacion == TipoOperacion.Eliminar || tipoOperacion == TipoOperacion.Modificar)
             {
                 CargarDatos(entidadId);
@@ -37,7 +39,6 @@ namespace MiniGym.Plan
 
             Inicializador(entidadId);
 
-            planServicio = new PlanServicio();
         }
 
         public override void Inicializador(long? entidadId)

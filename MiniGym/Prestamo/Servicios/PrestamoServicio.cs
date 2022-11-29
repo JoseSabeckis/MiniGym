@@ -84,6 +84,20 @@ namespace MiniGym.Prestamo.Servicios
 
         }
 
+        public void ModificarNotas(long id, string notas)
+        {
+            using (var contex = new MiniGymModelContainer())
+            {
+                var aux = contex.Prestamos.FirstOrDefault(x => x.Id == id);
+
+                aux.Notas = notas;
+
+                contex.SaveChanges();
+
+            }
+
+        }
+
         public PrestamoDto BuscarPrestamoPorId(long id)
         {
             using (var contex = new MiniGymModelContainer())

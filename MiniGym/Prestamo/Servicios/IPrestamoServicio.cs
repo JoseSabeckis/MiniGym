@@ -11,6 +11,7 @@ namespace MiniGym.Prestamo.Servicios
 
         void NuevoPrestamo(PrestamoDto prestamo);
 
+        void ModificarNotas(long id, string notas);
         long TrerIdDelPrestamoPorFechaIinicio(DateTime inicio);
 
         void EliminarPrestamoCuotasComprobante(long prestamoId);

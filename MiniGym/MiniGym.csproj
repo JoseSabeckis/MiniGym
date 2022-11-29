@@ -65,6 +65,12 @@
     <Compile Include="Cuota\CobrarCuota.Designer.cs">
       <DependentUpon>CobrarCuota.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cuota\ModificarNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuota\ModificarNotas.Designer.cs">
+      <DependentUpon>ModificarNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cuota\Servicios\CuotaDto.cs" />
     <Compile Include="Cuota\Servicios\CuotaServicio.cs" />
     <Compile Include="Cuota\Servicios\ICuotaServicio.cs" />
@@ -242,6 +248,9 @@
     </Compile>
     <EmbeddedResource Include="Cuota\CobrarCuota.resx">
       <DependentUpon>CobrarCuota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuota\ModificarNotas.resx">
+      <DependentUpon>ModificarNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioBase\FormularioAbm.resx">
       <DependentUpon>FormularioAbm.cs</DependentUpon>

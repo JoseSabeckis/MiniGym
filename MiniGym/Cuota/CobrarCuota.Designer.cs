@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CobrarCuota));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPlan = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblFinal = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -64,7 +65,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblPlan = new System.Windows.Forms.Label();
+            this.btnModificarNotas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gpbFacturas.SuspendLayout();
@@ -85,6 +86,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(823, 33);
             this.panel1.TabIndex = 1;
+            // 
+            // lblPlan
+            // 
+            this.lblPlan.AutoSize = true;
+            this.lblPlan.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPlan.Location = new System.Drawing.Point(5, 4);
+            this.lblPlan.Name = "lblPlan";
+            this.lblPlan.Size = new System.Drawing.Size(43, 20);
+            this.lblPlan.TabIndex = 11;
+            this.lblPlan.Text = "Plan:";
             // 
             // btnVolver
             // 
@@ -161,10 +172,10 @@
             // 
             this.txtBusquedaCliente.BackColor = System.Drawing.SystemColors.Info;
             this.txtBusquedaCliente.Enabled = false;
-            this.txtBusquedaCliente.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusquedaCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusquedaCliente.Location = new System.Drawing.Point(420, 28);
             this.txtBusquedaCliente.Name = "txtBusquedaCliente";
-            this.txtBusquedaCliente.Size = new System.Drawing.Size(389, 22);
+            this.txtBusquedaCliente.Size = new System.Drawing.Size(389, 25);
             this.txtBusquedaCliente.TabIndex = 60;
             // 
             // label7
@@ -241,6 +252,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.btnModificarNotas);
             this.panel8.Controls.Add(this.btnNotas);
             this.panel8.Controls.Add(this.brnCobrar);
             this.panel8.Controls.Add(this.txtNumeroCuota);
@@ -257,9 +269,9 @@
             // 
             // btnNotas
             // 
-            this.btnNotas.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNotas.BackColor = System.Drawing.SystemColors.Control;
             this.btnNotas.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotas.Location = new System.Drawing.Point(414, 12);
+            this.btnNotas.Location = new System.Drawing.Point(382, 9);
             this.btnNotas.Name = "btnNotas";
             this.btnNotas.Size = new System.Drawing.Size(79, 44);
             this.btnNotas.TabIndex = 68;
@@ -465,15 +477,17 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Cant. Cuotas:";
             // 
-            // lblPlan
+            // btnModificarNotas
             // 
-            this.lblPlan.AutoSize = true;
-            this.lblPlan.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPlan.Location = new System.Drawing.Point(5, 4);
-            this.lblPlan.Name = "lblPlan";
-            this.lblPlan.Size = new System.Drawing.Size(43, 20);
-            this.lblPlan.TabIndex = 11;
-            this.lblPlan.Text = "Plan:";
+            this.btnModificarNotas.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnModificarNotas.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarNotas.Location = new System.Drawing.Point(462, 9);
+            this.btnModificarNotas.Name = "btnModificarNotas";
+            this.btnModificarNotas.Size = new System.Drawing.Size(75, 44);
+            this.btnModificarNotas.TabIndex = 69;
+            this.btnModificarNotas.Text = "Modificar Notas";
+            this.btnModificarNotas.UseVisualStyleBackColor = false;
+            this.btnModificarNotas.Click += new System.EventHandler(this.btnModificarNotas_Click);
             // 
             // CobrarCuota
             // 
@@ -547,5 +561,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnNotas;
         private System.Windows.Forms.Label lblPlan;
+        private System.Windows.Forms.Button btnModificarNotas;
     }
 }

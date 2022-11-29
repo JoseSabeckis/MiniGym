@@ -102,7 +102,7 @@
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(422, 27);
-            this.txtNombre.TabIndex = 218;
+            this.txtNombre.TabIndex = 2;
             // 
             // label22
             // 
@@ -133,7 +133,7 @@
             this.txtCelular.MaxLength = 50;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(149, 27);
-            this.txtCelular.TabIndex = 207;
+            this.txtCelular.TabIndex = 6;
             // 
             // label16
             // 
@@ -153,7 +153,7 @@
             this.txtTelefono.MaxLength = 50;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(149, 27);
-            this.txtTelefono.TabIndex = 206;
+            this.txtTelefono.TabIndex = 5;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label14
@@ -174,7 +174,7 @@
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(422, 27);
-            this.txtEmail.TabIndex = 209;
+            this.txtEmail.TabIndex = 8;
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // label13
@@ -194,7 +194,7 @@
             this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(149, 27);
-            this.dtpFechaNacimiento.TabIndex = 208;
+            this.dtpFechaNacimiento.TabIndex = 7;
             // 
             // label11
             // 
@@ -214,7 +214,7 @@
             this.txtCuil.MaxLength = 11;
             this.txtCuil.Name = "txtCuil";
             this.txtCuil.Size = new System.Drawing.Size(149, 27);
-            this.txtCuil.TabIndex = 205;
+            this.txtCuil.TabIndex = 4;
             // 
             // label1
             // 
@@ -234,7 +234,7 @@
             this.txtDni.MaxLength = 8;
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(149, 27);
-            this.txtDni.TabIndex = 204;
+            this.txtDni.TabIndex = 3;
             // 
             // lblApellido
             // 
@@ -254,7 +254,7 @@
             this.txtApellido.MaxLength = 100;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(422, 27);
-            this.txtApellido.TabIndex = 203;
+            this.txtApellido.TabIndex = 1;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label12
@@ -286,7 +286,7 @@
             this.txtNumero.MaxLength = 10;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(75, 27);
-            this.txtNumero.TabIndex = 225;
+            this.txtNumero.TabIndex = 10;
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // label2
@@ -307,7 +307,7 @@
             this.txtCalle.MaxLength = 150;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(422, 27);
-            this.txtCalle.TabIndex = 224;
+            this.txtCalle.TabIndex = 9;
             this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
             // 
             // label4
@@ -349,7 +349,7 @@
             this.btnLocalidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLocalidad.Name = "btnLocalidad";
             this.btnLocalidad.Size = new System.Drawing.Size(50, 28);
-            this.btnLocalidad.TabIndex = 235;
+            this.btnLocalidad.TabIndex = 14;
             this.btnLocalidad.Text = "...";
             this.btnLocalidad.UseVisualStyleBackColor = true;
             this.btnLocalidad.Click += new System.EventHandler(this.btnLocalidad_Click);
@@ -360,7 +360,7 @@
             this.btnNuevaProvincia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNuevaProvincia.Name = "btnNuevaProvincia";
             this.btnNuevaProvincia.Size = new System.Drawing.Size(50, 28);
-            this.btnNuevaProvincia.TabIndex = 234;
+            this.btnNuevaProvincia.TabIndex = 13;
             this.btnNuevaProvincia.Text = "...";
             this.btnNuevaProvincia.UseVisualStyleBackColor = true;
             this.btnNuevaProvincia.Click += new System.EventHandler(this.btnNuevaProvincia_Click);
@@ -393,7 +393,7 @@
             this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(367, 28);
-            this.cmbLocalidad.TabIndex = 231;
+            this.cmbLocalidad.TabIndex = 12;
             // 
             // cmbProvincia
             // 
@@ -403,7 +403,7 @@
             this.cmbProvincia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(367, 28);
-            this.cmbProvincia.TabIndex = 230;
+            this.cmbProvincia.TabIndex = 11;
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.CmbProvincia_SelectionChangeCommitted);
             // 
             // PersonaABM

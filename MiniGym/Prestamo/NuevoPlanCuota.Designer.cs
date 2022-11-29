@@ -47,6 +47,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.cmbPlan = new System.Windows.Forms.ComboBox();
             this.nudNumeroCuotas = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.nudValorCuota = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -259,6 +259,18 @@
             this.panel7.Size = new System.Drawing.Size(267, 150);
             this.panel7.TabIndex = 5;
             // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.Red;
+            this.lblCategoria.Location = new System.Drawing.Point(54, 129);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(180, 17);
+            this.lblCategoria.TabIndex = 21;
+            this.lblCategoria.Text = "--- CREE UNA CATEGORIA ---";
+            this.lblCategoria.Visible = false;
+            // 
             // cmbPlan
             // 
             this.cmbPlan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -269,6 +281,7 @@
             this.cmbPlan.Name = "cmbPlan";
             this.cmbPlan.Size = new System.Drawing.Size(175, 27);
             this.cmbPlan.TabIndex = 20;
+            this.cmbPlan.SelectedIndexChanged += new System.EventHandler(this.cmbPlan_SelectedIndexChanged);
             // 
             // nudNumeroCuotas
             // 
@@ -308,7 +321,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 105);
+            this.label5.Location = new System.Drawing.Point(11, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 19);
             this.label5.TabIndex = 8;
@@ -351,18 +364,6 @@
             this.label13.Size = new System.Drawing.Size(49, 19);
             this.label13.TabIndex = 1;
             this.label13.Text = "Notas:";
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.ForeColor = System.Drawing.Color.Red;
-            this.lblCategoria.Location = new System.Drawing.Point(54, 129);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(180, 17);
-            this.lblCategoria.TabIndex = 21;
-            this.lblCategoria.Text = "--- CREE UNA CATEGORIA ---";
-            this.lblCategoria.Visible = false;
             // 
             // NuevoPlanCuota
             // 

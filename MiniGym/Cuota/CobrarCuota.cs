@@ -24,20 +24,20 @@ namespace MiniGym.Cuota
         private long _CuotaId;
         private decimal _MontoCuota;
 
-        Servicios.ICuotaServicio cuotaServicio;
+        ICuotaServicio cuotaServicio;
         IPersonaServicio clienteServicio;
         IPrestamoServicio prestamoServicio;
         IPlanServicio planServicio;
 
         ILocalidadServicio localidadServicio;
 
-        Servicios.CuotaDto _cuota = new Servicios.CuotaDto();
+        CuotaDto _cuota = new CuotaDto();
 
         public CobrarCuota(long idComprobante, long idPersona)
         {
             InitializeComponent();
 
-            cuotaServicio = new Servicios.CuotaServicio();
+            cuotaServicio = new CuotaServicio();
             clienteServicio = new PersonaServicio();
             prestamoServicio = new PrestamoServicio();
             planServicio = new PlanServicio();
@@ -587,6 +587,12 @@ namespace MiniGym.Cuota
             {
                 MessageBox.Show("No Hay Notas En Este Plan", "Notas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void btnModificarNotas_Click(object sender, EventArgs e)
+        {
+            var fnotas = new ModificarNotas(_ComprobanteId);
+            fnotas.ShowDialog();
         }
     }
 }
